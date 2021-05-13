@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>muon</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="content_cover">
+        <div id="cover">
+          <div id="cover_content">
+            <div id="summary_left_right">
+              <div id="summary_left">
+                <svg id="header_svg" width="100px" height="200px">
+                </svg>
+              </div>
+              <div id="summary_right">
+                <div id="summary_title">
+                  <h1>muon</h1>
+                </div>
+                <div id="summary_subtitle">
+                  <h2>multimodal omics<br>Python framework</h2>
+                </div>
+              </div>
+            </div>
+            <div class="action_buttons"> 
+              <a href="#install" class="action_button"><span class="action_link">pip install muon</span></a>
+              <a href="https://muon.readthedocs.io/en/latest/index.html" target="_blank" class="git"><span class="git_link">docs</span></a>
+              <a href="https://muon-tutorials.readthedocs.io/en/latest/index.html" target="_blank" class="git"><span class="git_link">tutorials</span></a>
+              <a href="https://github.com/gtca/muon" target="_blank" class="git"><span class="git_link">github</span></a>
+            </div>
+          </div>
+        </div>
+        <div id="content">
+          <div class="content_page">
+            <div id="start">
+              <p><span class="muon">muon</span> is a Python framework designed to work with multimodal omics data. Incentified by recent advances in acquisition of multimodal data from individual cells, <span class="muon">muon</span> aims to provide convenience and speed to its users enabling standardised analysis while staying flexible and expandable. <span class="muon">muon</span> stands on the shoulders of and integrates with <a href="https://github.com/theislab/anndata" target="_blank">annotated&nbsp;data</a> object specification and <a href="https://github.com/theislab/scanpy">scanpy</a> library for single-cell analysis in Python.</p>
+            </div>
+          </div>
+
+
+          <div id="showcase">
+            <div class="showcase_element">
+              <a href="https://muon-tutorials.readthedocs.io/en/latest/single-cell-rna-atac/" target="_blank"><span class="clickable"></span></a>
+              <h4>Application highlight</h4>Analysis of single&#8209;cell <span class="highlight">RNA&nbsp;&&nbsp;ATAC</span> data from peripheral blood mononuclear cells</div>
+            <div class="showcase_element showcase_element">
+              <a href="https://muon-tutorials.readthedocs.io/en/latest/cite-seq/" target="_blank"><span class="clickable"></span></a>
+              <h4>Application highlight</h4>Analysis of single&#8209;cell <span class="highlight">RNA&nbsp;&&nbsp;surface protein</span> measurements from peripheral blood mononuclear cells
+            </div>
+            <div class="showcase_element showcase_element_tbd">
+              <a href="https://www.nature.com/articles/s41467-018-03149-4" target="_blank"><span class="clickable"></span></a>
+              <h4>Potential application</h4>Analysis of single&#8209;cell <span class="highlight">scNMT-seq</span> data
+            </div>
+            <div class="showcase_element showcase_element_tbd">
+              <a href="https://www.cell.com/cell/pdf/S0092-8674(20)30809-6.pdf" target="_blank"><span class="clickable"></span></a>
+              <h4>Potential application</h4>Analysis of single&#8209;cell <span class="highlight">RNA&nbsp;&&nbsp;intracellular protein activity</span> from peripheral blood mononuclear cells
+            </div>
+          </div>
+
+          <div class="content_page">
+            <div id="concept">
+              <img id="cell_render" src="cell_render.png"/>
+            </div>
+          </div>
+
+          <div class="content_page">
+            <h1>get to know muon</h1>
+            <h2 class="h2_first">multimodal data containers</h2>
+            <div class="content_block">
+              <div class="content_img" id="img_mudata">
+                <img src="img/mudata.png"/>
+              </div>
+              <div class="content_text">
+                <div>
+                  <p><span class="muon">muon</span> introduces <b>multimodal data containers</b> allowing Python users to work with increasigly complex datasets efficiently and to build new workflows and computational tools around it</p>
+                </div>
+                <code>
+                  <span class="code_header">~> python<br></span>
+                  mdata<br>
+                  | MuData object with n_obs &times; n_vars = 10110 &times; 110101<br>
+                  | &emsp;2 modalities<br>
+                  | &emsp;&emsp;atac: 10110 x 100001<br>
+                  | &emsp;&emsp;rna:  10110 x 10100<br>
+                </code>
+                <div class="content_text_br"></div>
+              </div>
+            </div>
+
+            <div class="content_block">
+              <div class="content_img" id="img_multimodal">
+                <img src="img/multimodal.png"/>
+              </div>
+              <div class="content_text">
+                <h2>multi-omics methods</h2>
+                <div>
+                  <p><span class="muon">muon</span> brings <b>multi-omics methods</b> availability to a whole new level: state-of-the-art methods for multi-omics data integration are just a function call away</p>
+                </div>
+                <code>
+                  <span class="code_header"># multi-omics factor analysis<br></span>
+                  mu.tl.mofa(mdata)
+                </code>
+                <code>
+                  <span class="code_header"># weighted nearest neighbours<br></span>
+                  mu.pp.neighbors(mdata)
+                </code>
+                <div class="content_text_br"></div>
+              </div>
+            </div>
+
+            <div class="content_block">
+              <div class="content_img" id="img_unimodal">
+                <img src="img/unimodal.png"/>
+              </div>
+              <div class="content_text">
+                <h2>methods crafted for omics</h2>
+                <div>
+                  <p><span class="muon">muon</span> features methods for specific <b>omics</b> such as ATAC-seq and CITE-seq making it an extendable solution and allowing for prospective growth in an open-source environment</p>
+                </div>
+                <code>
+                  <span class="code_header"># TF-IDF transformation<br></span>
+                  ac.pp.tfidf(mdata.mod['atac'])
+                </code>
+                <code>
+                  <span class="code_header"># denoising and scaling by background<br></span>
+                  pt.pp.dsb(mdata.mod['prot'])
+                </code>
+                <div class="content_text_br"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="install" class="content_page">
+            <h1>Get muon</h1>
+            <code>
+              <span class="code_header">&#10095; </span>
+              pip install muon
+              <span class="code_header"><br>&nbsp;&nbsp;# or<br></span>
+              <span class="code_header">&#10095; </span>
+              pip install git+https://github.com/gtca/muon
+            </code>
+            <br/><br/><br/><br/>
+
+            <h1>Get started</h1>
+            <code>
+              <span class="code_header">~> python<br></span>
+              import muon as mu
+            </code>
+            <div>
+              <p><a href="https://muon.readthedocs.io/en/latest/io/input.html" target="_blank">Load data easily</a> whether you start from raw count matrices, Loom files or AnnData objects. Or Snap files. Or Seurat objects. Or MultiAssayExperiment objects. And make multimodal containers with it.</p>
+            </div>
+            <code>
+              <span class="code_header">~> python<br></span>
+              mdata = MuData({<br>
+              &nbsp;&nbsp;'rna': adata_rna,<br>
+              &nbsp;&nbsp;'prot': adata_prot<br>
+              })
+            </code>
+            <div>
+              <p>Generate <a href="https://muon.readthedocs.io/en/latest/omics/multi.html#multi-omics-factor-analysis" target="_blank">an interpretable latent space</a> leveraging information from multiple modalities. Or <a href="https://muon.readthedocs.io/en/latest/omics/multi.html#multiplex-clustering" target="_blank">cluster</a> your data based on multiple layers of information. Or construct <a href="https://muon.readthedocs.io/en/latest/omics/multi.html#weighted-nearest-neighbours" target="_blank">a neighbourhood graph</a> on multiple modalities.</p>
+            </div>
+            <code>
+              <span class="code_header">~> python<br></span>
+              mu.tl.mofa(mdata)
+            </code>
+            <div>
+              <p>Visualize results in and across modalities.</p>
+            </div>
+            <code>
+              <span class="code_header">~> python<br></span>
+              mu.pl.mofa(mdata, color='CD45RA')<br>
+              mu.pl.umap(mdata, color='celltype')
+            </code>
+            <div class="content_page_br"></div>
+          </div>
+
+          <div id="engage" class="content_page">
+            <!-- <h1>Engage with the community</h1> -->
+            <h1>get involved</h1>
+            <div>
+              <p>From biomedical applications to novel single-cell assays. From chromatin accessibility to spatial transcriptomics. Applications of multimodal data are far-reaching, and we're doing this together.</p>
+            </div>
+          </div>
+
+          <div class="content_page_wide">
+            <div id="green_canvas">
+              <div id="canvas_wrapper">
+                <div class="canvas_column">
+                  <div>
+                    <span>codebase</span>
+                    <ul>
+                      <li><a href="https://github.com/gtca/muon" target="_blank">source code</a></li>
+                      <li><a href="https://github.com/gtca/muon-tutorials" target="_blank">tutorials</a></li>
+                      <li><a href="https://github.com/gtca/muon.r" target="_blank">muon.r</a></li>
+                      <li><a href="https://github.com/gtca/Muon.jl" target="_blank">Muon.jl</a></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <span>documentation</span>
+                    <ul>
+                      <li><a href="https://muon.readthedocs.io/en/latest/index.html" target="_blank">muon documentation</a></li>
+                      <li><a href="https://muon-tutorials.readthedocs.io/en/latest/index.html" target="_blank">muon tutorials</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="canvas_column">
+                  <div>
+                    <span>publications</span>
+                    <ul>
+
+                      <li><a href="#" target="_blank">muon preprint</a></li>
+                      <li><a href="https://www.biorxiv.org/content/10.1101/2020.11.03.366674v1" target="_blank">MEFISTO preprint</a></li>
+                      <li><a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02015-1" target="_blank">MOFA+ paper</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="canvas_column">
+                  <div>
+                    <span>communication</span>
+                    <ul>
+                      <li><a href="https://discord.gg/MMsgDhnSwQ" target="_blank">Discord muon server</a></li>
+                      <li><a href="https://join.slack.com/t/mofahelp/shared_invite/enQtMjcxNzM3OTE3NjcxLWNhZmM1MDRlMTZjZWRmYWJjMGFmMDkzNDBmMDhjYmJmMzdlYzU4Y2EzYTI1OGExNzM2MmUwMzJkZmVjNDkxNGI" target="_blank">Slack MOFA workspace</a></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <span>main contributors</span>
+                    <ul>
+                      <li><a href="https://github.com/gtca" target="_blank">Danila Bredikhin</a></li>
+                      <li><a href="https://github.com/ilia-kats" target="_blank">Ilia Kats</a></li>
+                      <li><a href="https://github.com/mffrank" target="_blank">Max Frank</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="footer_content">
+        <div>
+          <p>Consider citing<br/><a href="#">Bredikhin et al., 2021. Muon: multimodal omics analysis framework.</a></p>
+        </div>
+        <div>
+          <p>Page content and design by Danila Bredikhin.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      svg = d3.select("#header_svg");
+
+      // Define the gradient
+      var gradient = svg.append("svg:defs")
+          .append("svg:linearGradient")
+          .attr("id", "gradient")
+          .attr("x1", "20%")
+          .attr("y1", "0%")
+          .attr("x2", "80%")
+          .attr("y2", "100%")
+          .attr("spreadMethod", "pad");
+
+      // Define the gradient colors
+      gradient.append("svg:stop")
+          .attr("offset", "0%")
+          .attr("stop-color", "#0BFF27")
+          .attr("stop-opacity", 0.9);
+
+      gradient.append("svg:stop")
+          .attr("offset", "75%")
+          .attr("stop-color", "#01FE9E")
+          .attr("stop-opacity", 1);
+
+      gradient.append("svg:stop")
+          .attr("offset", "100%")
+          .attr("stop-color", "#00CD80")
+          .attr("stop-opacity", 1);
+
+      var defs = svg.append("defs");
+      var filter = defs.append("filter")
+                         .attr("id", "blur")
+                         .attr("y", "-50%")
+                         .attr("height", "200%")
+                       .append("feGaussianBlur")
+                         .attr("stdDeviation", 1.5);
+
+      var circle = svg.append("circle")
+                      .attr("cx", 50)
+                      .attr("cy", 30)
+                      .attr("r", 15)
+                      .attr('fill', 'url(#gradient)');
+
+      var shadow = svg.append("ellipse")
+                      .attr("cx", 50)
+                      .attr("cy", 180)
+                      .attr("rx", 10)
+                      .attr("ry", 5)
+                      .style("opacity", .2)
+                      .style("filter", "url(#blur)");
+    
+
+      function repeat() {
+        shadow
+          .transition()
+            .duration(2500)
+            .attr("rx", 8)
+            .attr("ry", 3)
+          .transition()
+            .duration(4000)
+            .attr("rx", 10)
+            .attr("ry", 5);
+
+        circle
+          .transition()        
+            .duration(2500)      
+            .attr("cy", 50)  
+          .transition()   
+            .duration(4000)
+            .attr("cy", 30)
+          .on("end", repeat);
+      };
+
+      repeat();
+    </script>
+
+    <script>
+      (function() {
+  // Init
+  var container = document.getElementById("concept"),
+    inner = document.getElementById("cell_render");
+    
+      // Mouse
+      var mouse = {
+        _x: 0,
+        _y: 0,
+        x: 0,
+        y: 0,
+        updatePosition: function(event) {
+          var e = event || window.event;
+          this.x = e.clientX - this._x;
+          this.y = (e.clientY - this._y) * ((e.clientY - this._y) < 0 ? -1 : 1);
+        },
+        setOrigin: function(e) {
+          this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
+          this._y = 0 + Math.floor(e.offsetHeight / 2);
+        },
+        show: function() {
+          return "(" + this.x + ", " + this.y + ")";
+        }
+      };
+
+      // Track the mouse position relative to the center of the container.
+      mouse.setOrigin(container);
+
+      //----------------------------------------------------
+
+      var counter = 0;
+      var refreshRate = 10;
+      var isTimeToUpdate = function() {
+        return counter++ % refreshRate === 0;
+      };
+
+      //----------------------------------------------------
+
+      var onMouseEnterHandler = function(event) {
+        update(event);
+      };
+
+      var onMouseLeaveHandler = function() {
+        inner.style = "";
+      };
+
+      var onMouseMoveHandler = function(event) {
+        if (isTimeToUpdate()) {
+          update(event);
+        }
+      };
+
+      //----------------------------------------------------
+
+      var update = function(event) {
+        mouse.updatePosition(event);
+        updateTransformStyle(
+          (mouse.y / inner.offsetHeight / 2).toFixed(2),
+          (mouse.x / inner.offsetWidth / 2).toFixed(2)
+        );
+      };
+
+      var updateTransformStyle = function(x, y) {
+        var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
+        inner.style.transform = style;
+        inner.style.webkitTransform = style;
+        inner.style.mozTranform = style;
+        inner.style.msTransform = style;
+        inner.style.oTransform = style;
+      };
+
+      //--------------------------------------------------------
+
+      container.onmousemove = onMouseMoveHandler;
+      container.onmouseleave = onMouseLeaveHandler;
+      container.onmouseenter = onMouseEnterHandler;
+    })();
+    </script>
+  </body>
+</html>
+
+
