@@ -391,11 +391,11 @@ html #wrapper #content_cover #content #showcase .showcase_element.showcase_eleme
 @media only screen and (max-width: 1300px) {
   html #wrapper #content_cover #content #showcase .showcase_element, body #wrapper #content_cover #content #showcase .showcase_element {
     min-width: 30%;
-    font-size: 0.5rem;
-    line-height: 0.7rem;
+    font-size: 12px;
+    line-height: 14px;
   }
   html #wrapper #content_cover #content #showcase .showcase_element h4, body #wrapper #content_cover #content #showcase .showcase_element h4 {
-    font-size: 0.5rem;
+    font-size: 12px;
     padding-bottom: 1rem;
   }
 }
