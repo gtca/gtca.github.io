@@ -1,0 +1,143 @@
+
+$twitter_blue: #38A1F3;
+$bioconductor_green: #73B93D;
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  
+  #wrapper {
+    width: 100%;
+    height: 100%;
+
+    #content {
+      display: flex;
+      flex-direction: row;
+      align-self: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      
+      background-image: url(cover.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: left top;
+
+      transition: all 1s ease-in-out;
+
+      @media only screen and (max-width: 1000px) {
+        background-image: none;
+      }
+      @media only screen and (max-aspect-ratio: 7/8) {
+        background-image: none;
+      }
+    
+      #left {
+        width: 50%;
+        height: 100%;
+
+        @media only screen and (max-width: 1000px) {
+          width: 10%;
+        }
+        @media only screen and (max-aspect-ratio: 7/8) {
+          width: 10%;
+        }
+      }
+
+      #right {
+        display: flex;
+        width: 50%;
+        height: 100%;
+
+        @media only screen and (max-width: 1000px) {
+          width: 90%;
+        }
+        @media only screen and (max-aspect-ratio: 7/8) {
+          width: 90%;
+        }
+
+        #right_content {
+          align-self: center;
+          padding: 10px 50px 10px 10px;
+          margin-left: -30px;
+
+          #summary_title {
+            font-size: 42pt;
+            font-family: Roboto, sans-serif, monospace;
+            font-weight: 800;
+            color: #777777;
+            padding: 0;
+          }
+
+          #summary_subtitle {
+            font-size: 18pt;
+            font-family: serif;
+            font-weight: 100;
+            color: #777777;
+            padding: 0;
+            
+
+            .contributors {
+              font-size: 14pt;
+              text-decoration: none;
+              pointer-events: auto;
+              margin-top: 1em;
+              color: darkgrey;
+
+              a:hover, a:visited, a:link, a:active {
+                text-decoration: none;
+                color: grey;
+              }
+              a {
+                color: grey;
+              }
+              a:hover {
+                color: black;
+              }
+              .twt:visited {
+                color: darkgrey;
+              }
+              .twt:hover {
+                color: $twitter_blue;
+              }
+            }
+          }
+
+          #summary_text {
+            font-size: 14pt;
+            padding: 30px 0;
+            font-family: serif;
+            color: #333333;
+            max-width: 700px;
+          }
+
+          .pub_links {
+            position: relative;
+            text-decoration: none;
+            color: grey;
+            a:hover, a:visited, a:link, a:active {
+              text-decoration: none;
+              color: grey;
+            }
+            a {
+              color: grey;
+            }
+            a:hover {
+              color: black;
+            }
+            .ppr:hover {
+              color: red;
+            }
+            .twt:hover {
+              color: $twitter_blue;
+            }
+            .bioc:hover {
+              color: $bioconductor_green;
+            }
+          }
+        }
+      }
+    }
+  }
+}
