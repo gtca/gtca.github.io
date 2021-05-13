@@ -1,1 +1,100 @@
-Hello World
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Danila Bredikhin</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link id="stylesheet" rel="stylesheet" type="text/css" href="styles/light.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
+    <script>
+       var themeCookie = document.cookie.replace(/(?:(?:^|.*;\s*)theme\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+       if (themeCookie) {
+         document.getElementById('stylesheet').setAttribute('href', (themeCookie == 'dark') ? 'styles/dark.css' : 'styles/light.css');
+       }
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div onclick="var sheet=document.getElementById('stylesheet').getAttribute('href');
+                    document.cookie = (sheet == 'styles/light.css') ? 'theme=dark' : 'theme=light';
+                    document.getElementById('stylesheet').setAttribute('href', (sheet == 'styles/light.css') ? 'styles/dark.css' : 'styles/light.css');" id="lights">
+      </div>
+      <div id="content">
+        <div id="title">
+          <p id="name">Danila Bredikhin</p>
+          <p id="desc">PhD candidate at <a class="embl" href="https://www.embl.org/" target="_blank">EMBL</a> with <a href="https://twitter.com/oliverstegle" target="_blank" class="twitter">Oliver Stegle</a></p>
+        </div>
+        <div id="announcement">
+          <div class="att_card">
+            <div class="att_text">Want to chat? <a href="mailto:danila@hey.com?subject=Happy to chat&body=Hi, I have just seen the message on your website and " target="_blank">Drop me an email.</a></div>
+          </div>
+        </div>
+        <div id="occupation">
+          <div class="when">Currently</div>
+          <div class="what">PhD candidate in <a class="embl" href="https://www.embl.org/" target="_blank">EMBL</a> | <a href="https://www.embl.de/research/units/genome_biology/stegle/" target="_blank">Stegle group</a></div>
+          <div class="what">Visiting scientist in <a class="sanger" href="https://www.sanger.ac.uk/group/stegle-and-theis-group/" target="_blank">Sanger Institute</a></div>
+          <div class="what">Visiting researcher in <a class="dkfz" href="https://www.dkfz.de/en/bioinformatik-genomik-systemgenetik/" target="_blank">DKFZ</a></div>
+          <div class="when">Previously</div>
+          <div class="what">Research trainee at <a class="chambray" href="http://iitp.ru/en/about" target="_blank">IITP</a> | <a href="http://www.rtcb.iitp.ru/mg_e.htm" target="_blank">Gelfand group</a></div>
+          <div class="what"><a class="msu" href="https://www.msu.ru/en/" target="_blank">MSU</a> alumnus | <a class="fbb" href="http://en.fbb.msu.ru/" target="_blank">FBB</a></div>
+        </div>
+        <div id="contributions">
+          <div id="contributions_header">
+            <div id="contributions_title">Contributions</div>
+            <div id="contributions_profile">
+              <a href="https://github.com/gtca" target="_blank" class="github">GitHub</a>
+            </div>
+          </div>
+          <div id="contributions_list">
+            <div class="contrib_card">
+              <div class="contrib_title"><a href="muon/index.html">muon</a></div>
+              <div class="contrib_info">// multimodal omics framework</div>
+            </div>
+            <div class="contrib_card">
+              <div class="contrib_title"><a target="_blank" href="https://biofam.github.io/MOFA2/">MOFA&nbsp;<img src="styles/launch-24px.svg" class="external"/></a></div>
+              <div class="contrib_info">// multi-omics factor analysis</div>
+            </div>
+          </div>
+        </div>
+        <div id="publications">
+          <div id="publications_header">
+              <div id="publications_title">Publications</div>
+              <div id="publications_profile">
+                <a href="https://orcid.org/0000-0001-8089-6983" target="_blank" class="orcid">ORCID</a>
+                <a href="https://scholar.google.com/citations?user=a3d4D-YAAAAJ" target="_blank" class="scolar">Google Scholar</a>
+              </div>
+          </div>
+          <div id="publications_list">
+            <div class="pub_card">
+                <a href="mofa2/index.html"><span class="clickable"></span></a>
+                <div class="pub_title">Multimodal single-cell data integration framework</div>
+                <div class="pub_alias"> <a href="mofa2/index.html">MOFA+</a></div>
+                <div class="pub_info">Genome Biology, May 2020</div>
+            </div>
+            <div class="pub_card">
+                <a href="zga/index.html"><span class="clickable"></span></a>
+                <div class="pub_title">CRISPRa screen for zygotic genome activation</div>
+                <div class="pub_alias"> <a href="zga/index.html">Zygotic genome activation</a></div>
+                <div class="pub_info">Cell Systems, July 2020</div>
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <div id="communication">
+            <span class="github"><a href="https://github.com/gtca" target="_blank">GitHub</a> |</span>
+            <span class="twitter"><a href="http://twitter.com/gtcaa" target="_blank">Twitter</a> |</span>
+            <span class="email"><a href="mailto:danila@hey.com" target="_blank">Email</a></span>
+          </div>
+          <div class="middot">&middot;</div>
+          <div id="locations">
+            <a href="https://www.google.com/maps/place/Heidelberg/" target="_blank" class="hd">Heidelberg</a> |
+            <a href="https://www.google.com/maps/place/Cambridge/" target="_blank" class="cam">Cambridge</a> |
+            <a href="https://www.google.com/maps/place/Moscow/" target="_blank" class="msk">Moscow</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

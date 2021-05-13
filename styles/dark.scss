@@ -1,0 +1,212 @@
+@import 'colours';
+
+html, body {
+  transition: background-color 250ms;
+  background-color: black;
+  margin: 0;
+}
+
+#wrapper {
+  transition: background-color 250ms;
+  background-color: black;
+
+  #lights {
+    border-color: white;
+    &:hover {
+      background-color: white;
+    }
+  }
+
+  #content {
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+    #title {
+        text-align: center;
+        #name {
+          color: white;
+          @media screen and (min-width: 1300px) {
+            color: $grey1_5;
+            font-size: 3em;
+          }
+        }
+       #desc {
+         display: block;
+         color: $grey2;
+         text-align: center;
+
+         a:hover, a:visited, a:link, a:active {
+           text-decoration: none;
+           color: inherit;
+         }
+         a:hover {
+           color: $grey1_c;
+         }
+         .embl:hover {
+           color: $green;
+         }
+         .twitter:hover {
+           color: $twitter_blue;
+         }
+         @media screen and (min-width: 1300px) {
+           font-size: 1.5em;
+         }
+       }
+       #motivation {
+        display: none;
+       }
+     }
+     #occupation {
+      display: none;
+     }
+     #announcement {
+      display: none;
+     }
+     #contributions {
+       margin: 20px 0;
+
+       #contributions_header {
+        display: none;
+       }
+       #contributions_list {
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         flex-wrap: wrap;
+         
+         .contrib_card {
+           padding: 5px 10px;
+           width: auto;
+           align-self: center;
+
+           .contrib_title {
+              a {
+                width: fit-content;
+                text-decoration: none;
+                color: $grey2;
+                border-bottom: 1px solid transparent;
+              }
+              a:hover {
+                color: $grey1 !important;
+              }
+           }
+           
+           .contrib_info {
+             display: none;
+           }
+         }
+         @media screen and (min-width: 1300px) {
+          .contrib_card {
+            padding: 5px 30px;
+            .contrib_title a {
+               font-size: 4em;
+               font-family: sans-serif;
+            }
+          }
+         }
+       }
+     }
+     
+     #publications {
+       #publications_header {
+        display: none;
+       }
+       #publications_list {
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         flex-wrap: wrap;
+         .pub_card {
+           border-radius: 5px;
+           padding: 5px 10px;
+           width: auto;
+           align-self: center;
+
+           .pub_alias {
+             display: block;
+             color: $grey2;
+             a:visited, a:link, a:active {
+               text-decoration: none;
+               color: inherit;
+             }
+             a:hover {
+              color: $grey1_c;
+             }
+           }
+
+           .clickable {
+             display: none;
+           }
+           .pub_title {
+              display: none;
+           }
+           .pub_links {
+           }
+           .pub_info {
+             display: none;
+             color: $grey2;
+           }
+         }
+         @media screen and (min-width: 1300px) {
+          .pub_card {
+            padding: 5px 30px;
+            .pub_alias {
+               font-size: 4em;
+               font-family: sans-serif;
+            }
+          }
+         }
+       }
+     }
+     #footer {
+       display: flex;
+       flex-direction: row;
+       margin: 75px 0;
+       #communication {
+         color: $grey2;
+         a {
+           color: $grey2;
+         }
+         a:hover, a:visited, a:link, a:active {
+           text-decoration: none;
+           color: inherit;
+         }
+         a:hover {
+           color: $grey1_c;
+         }
+       }
+       .middot {
+        margin: 0 5px;
+        color: $grey2;
+       }
+       #locations {
+         color: $grey2;
+         a:hover, a:visited, a:link, a:active {
+           text-decoration: none;
+           color: inherit;
+         }
+         a {
+           color: $grey3;
+         }
+         .msk:hover {
+           color: $azure;
+         }
+         .cam:hover {
+           color: $cam_blue;
+         }
+         .hd:hover {
+           color: $hd_pink;
+         }
+         .hidden {
+            margin: 0;
+            padding: 0;
+            color: white;
+         }
+       }
+       @media screen and (min-width: 1300px) {
+         font-size: 1.5em;
+       }
+     }
+  }
+}

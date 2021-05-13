@@ -1,0 +1,373 @@
+@import 'colours';
+
+html, body {
+  background-color: $white1;
+  margin: 0;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  #lights {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    bottom: 20px;
+    align-self: center;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 99;
+    transition: all 250ms;
+    &:hover {
+      width: 40px;
+      height: 40px;
+      bottom: 10px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      align-self: flex-end;
+      right: 20px;
+      &:hover {
+        width: 40px;
+        height: 40px;
+        bottom: 10px;
+        right: 10px;
+      }
+    }
+  }
+
+  #content {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    width: 1000px;
+    // background-color: #eeeeee;
+
+    @media only screen and (max-width: 1024px) {
+      width: 800px;
+    }
+
+    @media only screen and (max-width: 800px) {
+      width: 400px;
+    }
+
+    #title {
+        padding: 30px 0;
+        #name {
+          font-size: 20pt;
+          font-family: 'Nunito', sans-serif;
+          margin: 0;
+       }
+       #desc {
+         display: none;
+         margin: 0;
+         font-size: 12pt;
+         font-family: 'Quattrocento Sans', sans-serif;
+       }
+       #motivation {
+       }
+     }
+     #occupation {
+       font-family: 'Quattrocento Sans', sans-serif;
+       .when {
+         text-transform: uppercase;
+         color: $grey1_5;
+         font-weight: 900;
+         font-size: 10pt;
+         padding: 0;
+         margin: 0;
+         margin-top: 20px;
+         font-family: 'Nunito', sans-serif;
+         &:first-child {
+          margin-top: 0;
+         }
+       }
+       .what {
+         margin: 0;
+         margin-bottom: 4px;
+         &:last-child {
+          margin-bottom: 0;
+         }
+       }
+       a:hover, a:visited, a:link, a:active {
+         text-decoration: none;
+         color: inherit;
+       }
+       a:hover {
+         color: $grey2;
+       }
+       .embl:hover {
+         color: $green;
+       }
+       .sanger:hover {
+        color: $sanger_blue;
+       }
+       .dkfz:hover {
+        color: $dkfz_blue;
+       }
+       .chambray:hover {
+         color: $chambray;
+       }
+       .fbb:hover {
+         color: $turquoise;
+       }
+       .msu:hover {
+         color: $msu_blue;
+       }
+     }
+     #contributions {
+       margin: 40px 0 20px 0;
+       #contributions_header {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+           #contributions_title {
+             text-transform: uppercase;
+             color: $grey1_5;
+             font-weight: 900;
+             font-size: 10pt;
+             padding: 0;
+             margin: 0;
+             padding-right: 10px;
+             font-family: 'Nunito', sans-serif;
+           }
+           #contributions_profile {
+             display: flex;
+             flex-direction: row;
+             color: $grey1_c;
+             margin-left: 5px;
+             a {
+              padding: 0 5px;
+              // font-size: 8pt;
+              align-self: flex-end;
+             }
+             a:hover, a:visited, a:link, a:active {
+               text-decoration: none;
+               color: inherit;
+             }
+             a:hover {
+              color: $grey3;
+             }
+             .github:hover {
+              color: black;
+             }
+           }
+       }
+       #contributions_list {
+         .contrib_card {
+           display: flex;
+           flex-direction: row;
+           flex-wrap: wrap;
+           width: 100%;
+           position: relative;
+           border-radius: 5px;
+           padding: 5px 0;
+
+           .contrib_title {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              flex: 1;
+              a {
+                width: fit-content;
+                // border-bottom: 1px solid $grey1;
+                text-decoration: none;
+                color: $grey3;
+              }
+              a:hover {
+                // border-bottom: 1px solid $grey3;
+                color: black; 
+              }
+           }
+           
+           .contrib_info {
+              margin-left: 5px;
+              color: $grey1_c;
+              display: flex;
+              flex-direction: column;
+              flex: 9;
+           }
+         }
+       }
+     }
+     #publications {
+       #publications_header {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+           #publications_title {
+             text-transform: uppercase;
+             color: $grey1_5;
+             font-weight: 900;
+             font-size: 10pt;
+             padding: 0;
+             margin: 0;
+             padding-right: 10px;
+             font-family: 'Nunito', sans-serif;
+           }
+           #publications_profile {
+             display: flex;
+             flex-direction: row;
+             color: $grey1_c;
+             margin-left: 5px;
+             a {
+              padding: 0 5px;
+              // font-size: 8pt;
+              align-self: flex-end;
+             }
+             a:hover, a:visited, a:link, a:active {
+               text-decoration: none;
+               color: inherit;
+             }
+             a:hover {
+              color: $grey3;
+             }
+             .orcid:hover {
+              color: $orcid_green;
+             }
+             .scolar:hover {
+              color: $scholar_blue;
+             }
+           }
+       }
+       #publications_list {
+         .pub_card {
+           position: relative;
+           max-width: 500px;
+           z-index: 1;
+
+           .clickable {
+             height: 100%;
+             width: 100%;
+             left: 0;
+             top: 0;
+             position: absolute;
+             z-index: 2;
+           }
+           .pub_links {
+             position: relative;
+             text-decoration: none;
+             color: inherit;
+             z-index: 3;
+           }
+           .pub_title {
+
+           }
+           .pub_info {
+             opacity: .5;
+           }
+             
+           .pub_alias {
+             display: none;
+           }
+         }
+         @media screen and (max-width: 1024px) {
+
+          .pubication_list {
+
+            flex-direction: column;
+            
+             .pub_card {
+
+               display: flex;
+               flex-direction: column;
+               flex-basis: 30%;
+
+               flex-shrink: 0;
+
+               &:first-child {
+                 margin-top: 0;
+               }
+               &:last-child {
+                 margin-bottom: 0;
+               }
+
+               .pub_title {
+                 flex-grow: 1;
+               }
+               .pub_info {
+                 font-size: 12pt;
+               }
+
+
+               &:active {
+                 box-shadow: 0 3px 5px rgba(0,0,0,0.30);
+               }
+             }
+             &::-webkit-scrollbar {
+                width: 0px;
+                background: transparent;
+             }
+           }
+        
+         }
+       }
+     }
+     #footer {
+       display: flex;
+       flex-direction: row;
+       margin: 20px 0;
+       #communication {
+         color: $grey2;
+         a {
+           color: $grey2;
+         }
+         a:hover, a:visited, a:link, a:active {
+           text-decoration: none;
+           color: inherit;
+         }
+         a:hover {
+           color: $grey3;
+         }
+         .twitter > a:hover {
+          color: $twitter_blue;
+         }
+         .github > a:hover {
+           color: $github_violet;
+         }
+       }
+       .middot {
+        margin: 0 5px;
+        color: $grey2;
+       }
+       #locations {
+         color: $grey2;
+         a:hover, a:visited, a:link, a:active {
+           text-decoration: none;
+           color: inherit;
+         }
+         a {
+           color: $grey3;
+         }
+         .msk:hover {
+           color: $azure;
+         }
+         .cam:hover {
+           color: $cam_blue;
+         }
+         .hd:hover {
+           color: $hd_pink;
+         }
+         .hidden {
+            margin: 0;
+            padding: 0;
+            color: white;
+         }
+       }
+     }
+  }
+
+
+  .external {
+    height: 12px;
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+  }
+}
