@@ -29,13 +29,16 @@ html, body {
 @media screen and (max-width: 1024px) {
   #wrapper #lights {
     align-self: flex-end;
-    right: 20px;
+    width: 4rem;
+    height: 4rem;
+    bottom: 2rem;
+    right: 2rem;
   }
   #wrapper #lights:hover {
-    width: 40px;
-    height: 40px;
-    bottom: 10px;
-    right: 10px;
+    width: 6rem;
+    height: 6rem;
+    bottom: 1rem;
+    right: 1rem;
   }
 }
 #wrapper #content {

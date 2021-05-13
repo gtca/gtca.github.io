@@ -119,6 +119,7 @@ html, body {
 #wrapper #content #publications #publications_list .pub_card .pub_alias {
   display: block;
   color: #666666;
+  font-size: 3em;
 }
 #wrapper #content #publications #publications_list .pub_card .pub_alias a:visited, #wrapper #content #publications #publications_list .pub_card .pub_alias a:link, #wrapper #content #publications #publications_list .pub_card .pub_alias a:active {
   text-decoration: none;
