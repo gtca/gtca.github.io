@@ -76,7 +76,10 @@ html, body {
        }
        @media screen and (max-width: 1024px) {
         .att_card {
-             margin: 0 20px 20px 10px;
+            max-width: 100%;
+            padding: 2rem 1rem;
+            margin: 0 2rem 2rem 0;
+            border-radius: 1rem;
         }
         &::-webkit-scrollbar {
             width: 0px;

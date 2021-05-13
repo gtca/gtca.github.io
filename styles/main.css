@@ -1,261 +1,400 @@
 html, body {
   background-color: #fafafa;
-  margin: 0; }
+  margin: 0;
+}
 
 #wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+}
+#wrapper #lights {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  bottom: 20px;
+  align-self: center;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 99;
+  transition: all 250ms;
+}
+#wrapper #lights:hover {
+  width: 40px;
+  height: 40px;
+  bottom: 10px;
+}
+@media screen and (max-width: 1024px) {
   #wrapper #lights {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    bottom: 20px;
-    align-self: center;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 99;
-    transition: all 250ms; }
-    #wrapper #lights:hover {
-      width: 40px;
-      height: 40px;
-      bottom: 10px; }
-    @media screen and (max-width: 1024px) {
-      #wrapper #lights {
-        align-self: flex-end;
-        right: 20px; }
-        #wrapper #lights:hover {
-          width: 40px;
-          height: 40px;
-          bottom: 10px;
-          right: 10px; } }
+    align-self: flex-end;
+    right: 20px;
+  }
+  #wrapper #lights:hover {
+    width: 40px;
+    height: 40px;
+    bottom: 10px;
+    right: 10px;
+  }
+}
+#wrapper #content {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  width: 1000px;
+}
+@media only screen and (max-width: 1024px) {
   #wrapper #content {
+    width: 800px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #wrapper #content {
+    width: 400px;
+  }
+}
+#wrapper #content #title {
+  padding: 30px 0;
+}
+#wrapper #content #title #name {
+  font-size: 20pt;
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+}
+@media only screen and (max-width: 1024px) {
+  #wrapper #content #title #name {
+    font-size: 4rem;
+  }
+}
+#wrapper #content #title #desc {
+  display: none;
+  margin: 0;
+  font-size: 12pt;
+  font-family: "Quattrocento Sans", sans-serif;
+}
+#wrapper #content #occupation {
+  font-family: "Quattrocento Sans", sans-serif;
+}
+@media only screen and (max-width: 1024px) {
+  #wrapper #content #occupation {
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+}
+#wrapper #content #occupation .when {
+  text-transform: uppercase;
+  color: #aaaaaa;
+  font-weight: 900;
+  font-size: 10pt;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  font-family: "Nunito", sans-serif;
+}
+#wrapper #content #occupation .when:first-child {
+  margin-top: 0;
+}
+#wrapper #content #occupation .what {
+  margin: 0;
+  margin-bottom: 4px;
+}
+#wrapper #content #occupation .what:last-child {
+  margin-bottom: 0;
+}
+#wrapper #content #occupation a:hover, #wrapper #content #occupation a:visited, #wrapper #content #occupation a:link, #wrapper #content #occupation a:active {
+  text-decoration: none;
+  color: inherit;
+}
+#wrapper #content #occupation a:hover {
+  color: #666666;
+}
+#wrapper #content #occupation .embl:hover {
+  color: #5e801a;
+}
+#wrapper #content #occupation .sanger:hover {
+  color: #2D3A87;
+}
+#wrapper #content #occupation .dkfz:hover {
+  color: #0047B5;
+}
+#wrapper #content #occupation .chambray:hover {
+  color: #35588F;
+}
+#wrapper #content #occupation .fbb:hover {
+  color: #457c83;
+}
+#wrapper #content #occupation .msu:hover {
+  color: #2f3950;
+}
+#wrapper #content #contributions {
+  margin: 40px 0 20px 0;
+}
+#wrapper #content #contributions #contributions_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+#wrapper #content #contributions #contributions_header #contributions_title {
+  text-transform: uppercase;
+  color: #aaaaaa;
+  font-weight: 900;
+  font-size: 10pt;
+  padding: 0;
+  margin: 0;
+  padding-right: 10px;
+  font-family: "Nunito", sans-serif;
+}
+#wrapper #content #contributions #contributions_header #contributions_profile {
+  display: flex;
+  flex-direction: row;
+  color: #cccccc;
+  margin-left: 5px;
+}
+#wrapper #content #contributions #contributions_header #contributions_profile a {
+  padding: 0 5px;
+  align-self: flex-end;
+}
+#wrapper #content #contributions #contributions_header #contributions_profile a:hover, #wrapper #content #contributions #contributions_header #contributions_profile a:visited, #wrapper #content #contributions #contributions_header #contributions_profile a:link, #wrapper #content #contributions #contributions_header #contributions_profile a:active {
+  text-decoration: none;
+  color: inherit;
+}
+#wrapper #content #contributions #contributions_header #contributions_profile a:hover {
+  color: #292929;
+}
+#wrapper #content #contributions #contributions_header #contributions_profile .github:hover {
+  color: black;
+}
+@media screen and (max-width: 1024px) {
+  #wrapper #content #contributions #contributions_header {
+    margin-top: 4rem;
+    flex-direction: column;
+  }
+  #wrapper #content #contributions #contributions_header #contributions_title, #wrapper #content #contributions #contributions_header #contributions_profile {
+    font-size: 3rem;
+    margin: 0;
+  }
+}
+#wrapper #content #contributions #contributions_list .contrib_card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  border-radius: 5px;
+  padding: 5px 0;
+}
+#wrapper #content #contributions #contributions_list .contrib_card .contrib_title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+#wrapper #content #contributions #contributions_list .contrib_card .contrib_title a {
+  width: fit-content;
+  text-decoration: none;
+  color: #292929;
+}
+#wrapper #content #contributions #contributions_list .contrib_card .contrib_title a:hover {
+  color: black;
+}
+#wrapper #content #contributions #contributions_list .contrib_card .contrib_info {
+  margin-left: 5px;
+  color: #cccccc;
+  display: flex;
+  flex-direction: column;
+  flex: 9;
+}
+@media screen and (max-width: 1024px) {
+  #wrapper #content #contributions #contributions_list .contrib_card {
+    margin-bottom: 1rem;
+    flex-direction: column;
+  }
+  #wrapper #content #contributions #contributions_list .contrib_card .contrib_title, #wrapper #content #contributions #contributions_list .contrib_card .contrib_info {
+    font-size: 3rem;
+  }
+  #wrapper #content #contributions #contributions_list .contrib_card .contrib_info {
+    display: block;
+  }
+  #wrapper #content #contributions #contributions_list .contrib_card .contrib_title img {
+    display: none;
+  }
+}
+#wrapper #content #publications #publications_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+#wrapper #content #publications #publications_header #publications_title {
+  text-transform: uppercase;
+  color: #aaaaaa;
+  font-weight: 900;
+  font-size: 10pt;
+  padding: 0;
+  margin: 0;
+  padding-right: 10px;
+  font-family: "Nunito", sans-serif;
+}
+#wrapper #content #publications #publications_header #publications_profile {
+  display: flex;
+  flex-direction: row;
+  color: #cccccc;
+  margin-left: 5px;
+}
+#wrapper #content #publications #publications_header #publications_profile a {
+  padding: 0 5px;
+  align-self: flex-end;
+}
+#wrapper #content #publications #publications_header #publications_profile a:hover, #wrapper #content #publications #publications_header #publications_profile a:visited, #wrapper #content #publications #publications_header #publications_profile a:link, #wrapper #content #publications #publications_header #publications_profile a:active {
+  text-decoration: none;
+  color: inherit;
+}
+#wrapper #content #publications #publications_header #publications_profile a:hover {
+  color: #292929;
+}
+#wrapper #content #publications #publications_header #publications_profile .orcid:hover {
+  color: #A5CE39;
+}
+#wrapper #content #publications #publications_header #publications_profile .scolar:hover {
+  color: #4285F4;
+}
+@media screen and (max-width: 1024px) {
+  #wrapper #content #publications #publications_header {
+    margin-top: 4rem;
+    flex-direction: column;
+  }
+  #wrapper #content #publications #publications_header #publications_title, #wrapper #content #publications #publications_header #publications_profile {
+    font-size: 3rem;
+    margin: 0;
+  }
+}
+#wrapper #content #publications #publications_list .pub_card {
+  position: relative;
+  max-width: 500px;
+  z-index: 1;
+}
+@media screen and (max-width: 1024px) {
+  #wrapper #content #publications #publications_list .pub_card {
+    max-width: 100%;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+#wrapper #content #publications #publications_list .pub_card .clickable {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 2;
+}
+#wrapper #content #publications #publications_list .pub_card .pub_links {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  z-index: 3;
+}
+#wrapper #content #publications #publications_list .pub_card .pub_info {
+  opacity: 0.5;
+}
+#wrapper #content #publications #publications_list .pub_card .pub_alias {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  #wrapper #content #publications #publications_list .pubication_list {
+    flex-direction: column;
+  }
+  #wrapper #content #publications #publications_list .pubication_list .pub_card {
     display: flex;
     flex-direction: column;
-    align-self: center;
-    justify-content: center;
-    width: 1000px; }
-    @media only screen and (max-width: 1024px) {
-      #wrapper #content {
-        width: 800px; } }
-    @media only screen and (max-width: 800px) {
-      #wrapper #content {
-        width: 400px; } }
-    #wrapper #content #title {
-      padding: 30px 0; }
-      #wrapper #content #title #name {
-        font-size: 20pt;
-        font-family: 'Nunito', sans-serif;
-        margin: 0; }
-      #wrapper #content #title #desc {
-        display: none;
-        margin: 0;
-        font-size: 12pt;
-        font-family: 'Quattrocento Sans', sans-serif; }
-    #wrapper #content #occupation {
-      font-family: 'Quattrocento Sans', sans-serif; }
-      #wrapper #content #occupation .when {
-        text-transform: uppercase;
-        color: #aaaaaa;
-        font-weight: 900;
-        font-size: 10pt;
-        padding: 0;
-        margin: 0;
-        margin-top: 20px;
-        font-family: 'Nunito', sans-serif; }
-        #wrapper #content #occupation .when:first-child {
-          margin-top: 0; }
-      #wrapper #content #occupation .what {
-        margin: 0;
-        margin-bottom: 4px; }
-        #wrapper #content #occupation .what:last-child {
-          margin-bottom: 0; }
-      #wrapper #content #occupation a:hover, #wrapper #content #occupation a:visited, #wrapper #content #occupation a:link, #wrapper #content #occupation a:active {
-        text-decoration: none;
-        color: inherit; }
-      #wrapper #content #occupation a:hover {
-        color: #666666; }
-      #wrapper #content #occupation .embl:hover {
-        color: #5e801a; }
-      #wrapper #content #occupation .sanger:hover {
-        color: #2D3A87; }
-      #wrapper #content #occupation .dkfz:hover {
-        color: #0047B5; }
-      #wrapper #content #occupation .chambray:hover {
-        color: #35588F; }
-      #wrapper #content #occupation .fbb:hover {
-        color: #457c83; }
-      #wrapper #content #occupation .msu:hover {
-        color: #2f3950; }
-    #wrapper #content #contributions {
-      margin: 40px 0 20px 0; }
-      #wrapper #content #contributions #contributions_header {
-        display: flex;
-        flex-direction: row;
-        justify-content: left; }
-        #wrapper #content #contributions #contributions_header #contributions_title {
-          text-transform: uppercase;
-          color: #aaaaaa;
-          font-weight: 900;
-          font-size: 10pt;
-          padding: 0;
-          margin: 0;
-          padding-right: 10px;
-          font-family: 'Nunito', sans-serif; }
-        #wrapper #content #contributions #contributions_header #contributions_profile {
-          display: flex;
-          flex-direction: row;
-          color: #cccccc;
-          margin-left: 5px; }
-          #wrapper #content #contributions #contributions_header #contributions_profile a {
-            padding: 0 5px;
-            align-self: flex-end; }
-          #wrapper #content #contributions #contributions_header #contributions_profile a:hover, #wrapper #content #contributions #contributions_header #contributions_profile a:visited, #wrapper #content #contributions #contributions_header #contributions_profile a:link, #wrapper #content #contributions #contributions_header #contributions_profile a:active {
-            text-decoration: none;
-            color: inherit; }
-          #wrapper #content #contributions #contributions_header #contributions_profile a:hover {
-            color: #292929; }
-          #wrapper #content #contributions #contributions_header #contributions_profile .github:hover {
-            color: black; }
-      #wrapper #content #contributions #contributions_list .contrib_card {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100%;
-        position: relative;
-        border-radius: 5px;
-        padding: 5px 0; }
-        #wrapper #content #contributions #contributions_list .contrib_card .contrib_title {
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          flex: 1; }
-          #wrapper #content #contributions #contributions_list .contrib_card .contrib_title a {
-            width: fit-content;
-            text-decoration: none;
-            color: #292929; }
-          #wrapper #content #contributions #contributions_list .contrib_card .contrib_title a:hover {
-            color: black; }
-        #wrapper #content #contributions #contributions_list .contrib_card .contrib_info {
-          margin-left: 5px;
-          color: #cccccc;
-          display: flex;
-          flex-direction: column;
-          flex: 9; }
-    #wrapper #content #publications #publications_header {
-      display: flex;
-      flex-direction: row;
-      justify-content: left; }
-      #wrapper #content #publications #publications_header #publications_title {
-        text-transform: uppercase;
-        color: #aaaaaa;
-        font-weight: 900;
-        font-size: 10pt;
-        padding: 0;
-        margin: 0;
-        padding-right: 10px;
-        font-family: 'Nunito', sans-serif; }
-      #wrapper #content #publications #publications_header #publications_profile {
-        display: flex;
-        flex-direction: row;
-        color: #cccccc;
-        margin-left: 5px; }
-        #wrapper #content #publications #publications_header #publications_profile a {
-          padding: 0 5px;
-          align-self: flex-end; }
-        #wrapper #content #publications #publications_header #publications_profile a:hover, #wrapper #content #publications #publications_header #publications_profile a:visited, #wrapper #content #publications #publications_header #publications_profile a:link, #wrapper #content #publications #publications_header #publications_profile a:active {
-          text-decoration: none;
-          color: inherit; }
-        #wrapper #content #publications #publications_header #publications_profile a:hover {
-          color: #292929; }
-        #wrapper #content #publications #publications_header #publications_profile .orcid:hover {
-          color: #A5CE39; }
-        #wrapper #content #publications #publications_header #publications_profile .scolar:hover {
-          color: #4285F4; }
-    #wrapper #content #publications #publications_list .pub_card {
-      position: relative;
-      max-width: 500px;
-      z-index: 1; }
-      #wrapper #content #publications #publications_list .pub_card .clickable {
-        height: 100%;
-        width: 100%;
-        left: 0;
-        top: 0;
-        position: absolute;
-        z-index: 2; }
-      #wrapper #content #publications #publications_list .pub_card .pub_links {
-        position: relative;
-        text-decoration: none;
-        color: inherit;
-        z-index: 3; }
-      #wrapper #content #publications #publications_list .pub_card .pub_info {
-        opacity: .5; }
-      #wrapper #content #publications #publications_list .pub_card .pub_alias {
-        display: none; }
-    @media screen and (max-width: 1024px) {
-      #wrapper #content #publications #publications_list .pubication_list {
-        flex-direction: column; }
-        #wrapper #content #publications #publications_list .pubication_list .pub_card {
-          display: flex;
-          flex-direction: column;
-          flex-basis: 30%;
-          flex-shrink: 0; }
-          #wrapper #content #publications #publications_list .pubication_list .pub_card:first-child {
-            margin-top: 0; }
-          #wrapper #content #publications #publications_list .pubication_list .pub_card:last-child {
-            margin-bottom: 0; }
-          #wrapper #content #publications #publications_list .pubication_list .pub_card .pub_title {
-            flex-grow: 1; }
-          #wrapper #content #publications #publications_list .pubication_list .pub_card .pub_info {
-            font-size: 12pt; }
-          #wrapper #content #publications #publications_list .pubication_list .pub_card:active {
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); }
-        #wrapper #content #publications #publications_list .pubication_list::-webkit-scrollbar {
-          width: 0px;
-          background: transparent; } }
-    #wrapper #content #footer {
-      display: flex;
-      flex-direction: row;
-      margin: 20px 0; }
-      #wrapper #content #footer #communication {
-        color: #666666; }
-        #wrapper #content #footer #communication a {
-          color: #666666; }
-        #wrapper #content #footer #communication a:hover, #wrapper #content #footer #communication a:visited, #wrapper #content #footer #communication a:link, #wrapper #content #footer #communication a:active {
-          text-decoration: none;
-          color: inherit; }
-        #wrapper #content #footer #communication a:hover {
-          color: #292929; }
-        #wrapper #content #footer #communication .twitter > a:hover {
-          color: #38A1F3; }
-        #wrapper #content #footer #communication .github > a:hover {
-          color: #882893; }
-      #wrapper #content #footer .middot {
-        margin: 0 5px;
-        color: #666666; }
-      #wrapper #content #footer #locations {
-        color: #666666; }
-        #wrapper #content #footer #locations a:hover, #wrapper #content #footer #locations a:visited, #wrapper #content #footer #locations a:link, #wrapper #content #footer #locations a:active {
-          text-decoration: none;
-          color: inherit; }
-        #wrapper #content #footer #locations a {
-          color: #292929; }
-        #wrapper #content #footer #locations .msk:hover {
-          color: #007FFF; }
-        #wrapper #content #footer #locations .cam:hover {
-          color: #A3C1AD; }
-        #wrapper #content #footer #locations .hd:hover {
-          color: #A50050; }
-        #wrapper #content #footer #locations .hidden {
-          margin: 0;
-          padding: 0;
-          color: white; }
+    flex-basis: 30%;
+    flex-shrink: 0;
+  }
+  #wrapper #content #publications #publications_list .pubication_list .pub_card:first-child {
+    margin-top: 0;
+  }
+  #wrapper #content #publications #publications_list .pubication_list .pub_card:last-child {
+    margin-bottom: 0;
+  }
+  #wrapper #content #publications #publications_list .pubication_list .pub_card .pub_title {
+    flex-grow: 1;
+  }
+  #wrapper #content #publications #publications_list .pubication_list .pub_card .pub_info {
+    font-size: 12pt;
+  }
+  #wrapper #content #publications #publications_list .pubication_list .pub_card:active {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  }
+  #wrapper #content #publications #publications_list .pubication_list::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+}
+#wrapper #content #footer {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+}
+@media screen and (max-width: 1024px) {
+  #wrapper #content #footer {
+    font-size: 2rem;
+  }
+}
+#wrapper #content #footer #communication {
+  color: #666666;
+}
+#wrapper #content #footer #communication a {
+  color: #666666;
+}
+#wrapper #content #footer #communication a:hover, #wrapper #content #footer #communication a:visited, #wrapper #content #footer #communication a:link, #wrapper #content #footer #communication a:active {
+  text-decoration: none;
+  color: inherit;
+}
+#wrapper #content #footer #communication a:hover {
+  color: #292929;
+}
+#wrapper #content #footer #communication .twitter > a:hover {
+  color: #38A1F3;
+}
+#wrapper #content #footer #communication .github > a:hover {
+  color: #882893;
+}
+#wrapper #content #footer .middot {
+  margin: 0 5px;
+  color: #666666;
+}
+#wrapper #content #footer #locations {
+  color: #666666;
+}
+#wrapper #content #footer #locations a:hover, #wrapper #content #footer #locations a:visited, #wrapper #content #footer #locations a:link, #wrapper #content #footer #locations a:active {
+  text-decoration: none;
+  color: inherit;
+}
+#wrapper #content #footer #locations a {
+  color: #292929;
+}
+#wrapper #content #footer #locations .msk:hover {
+  color: #007FFF;
+}
+#wrapper #content #footer #locations .cam:hover {
+  color: #A3C1AD;
+}
+#wrapper #content #footer #locations .hd:hover {
+  color: #A50050;
+}
+#wrapper #content #footer #locations .hidden {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+#wrapper .external {
+  height: 12px;
+}
+@media screen and (max-width: 800px) {
   #wrapper .external {
-    height: 12px; }
-    @media screen and (max-width: 800px) {
-      #wrapper .external {
-        display: none; } }
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

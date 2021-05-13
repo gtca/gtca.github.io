@@ -2,126 +2,172 @@ html, body {
   transition: background-color 250ms;
   overflow: hidden;
   overflow-y: scroll;
-  scrollbar-width: none; }
+  scrollbar-width: none;
+}
 
 ::-webkit-scrollbar {
-  display: none; }
+  display: none;
+}
 
 #wrapper #lights {
-  border-color: black; }
-  #wrapper #lights:hover {
-    background-color: black; }
+  border-color: black;
+}
+#wrapper #lights:hover {
+  background-color: black;
+}
 #wrapper #content #title #desc {
   display: none;
-  color: #292929; }
+  color: #292929;
+}
 #wrapper #content #title #motivation {
   color: #666666;
   padding: 0;
   margin: 0;
   font-size: 12pt;
-  font-family: serif; }
+  font-family: serif;
+}
 #wrapper #content #announcement {
-  margin: 5px -10px; }
+  margin: 5px -10px;
+}
+#wrapper #content #announcement .att_card {
+  position: relative;
+  max-width: 500px;
+  z-index: 1;
+  border-radius: 0.5em;
+  padding: 15px 10px;
+  margin: 10px 0 20px 0;
+  background-color: #F88379DD;
+  box-shadow: -4px -4px 4px 0 white, 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
+  color: #292929;
+  transition: box-shadow 250ms, background-color 250ms;
+}
+#wrapper #content #announcement .att_card .att_text a {
+  text-decoration: none;
+  border-bottom: 1px solid #666666;
+  color: inherit;
+  transition: border 500ms, color 500ms;
+}
+#wrapper #content #announcement .att_card .att_text a:hover {
+  border-bottom: 1px solid #292929;
+  color: black;
+}
+@media screen and (max-width: 1024px) {
   #wrapper #content #announcement .att_card {
-    position: relative;
-    max-width: 500px;
-    z-index: 1;
-    border-radius: .5em;
-    padding: 15px 10px;
-    margin: 10px 0 20px 0;
-    background-color: #F88379DD;
-    box-shadow: -4px -4px 4px 0 white, 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
-    color: #292929;
-    transition: box-shadow 250ms, background-color 250ms; }
-    #wrapper #content #announcement .att_card .att_text a {
-      text-decoration: none;
-      border-bottom: 1px solid #666666;
-      color: inherit;
-      transition: border 500ms, color 500ms; }
-      #wrapper #content #announcement .att_card .att_text a:hover {
-        border-bottom: 1px solid #292929;
-        color: black; }
-  @media screen and (max-width: 1024px) {
-    #wrapper #content #announcement .att_card {
-      margin: 0 20px 20px 10px; }
-    #wrapper #content #announcement::-webkit-scrollbar {
-      width: 0px;
-      background: transparent; } }
+    max-width: 100%;
+    padding: 2rem 1rem;
+    margin: 0 2rem 2rem 0;
+    border-radius: 1rem;
+  }
+  #wrapper #content #announcement::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+}
 #wrapper #content #contributions {
-  margin: 40px 0 20px 0; }
-  #wrapper #content #contributions #contributions_header {
-    display: flex; }
-  #wrapper #content #contributions #contributions_list .contrib_card .contrib_title a {
-    border-bottom: 1px solid #eaeaea;
-    color: #292929;
-    transition: border 250ms, color 250ms; }
-  #wrapper #content #contributions #contributions_list .contrib_card .contrib_title a:hover {
-    border-bottom: 1px solid #292929;
-    color: black; }
-  #wrapper #content #contributions #contributions_list .contrib_card .contrib_info {
-    display: flex; }
+  margin: 40px 0 20px 0;
+}
+#wrapper #content #contributions #contributions_header {
+  display: flex;
+}
+#wrapper #content #contributions #contributions_list .contrib_card .contrib_title a {
+  border-bottom: 1px solid #eaeaea;
+  color: #292929;
+  transition: border 250ms, color 250ms;
+}
+#wrapper #content #contributions #contributions_list .contrib_card .contrib_title a:hover {
+  border-bottom: 1px solid #292929;
+  color: black;
+}
+#wrapper #content #contributions #contributions_list .contrib_card .contrib_info {
+  display: flex;
+}
 #wrapper #content #publications {
-  margin-top: 20px; }
-  #wrapper #content #publications #publications_header {
-    display: flex; }
-  #wrapper #content #publications #publications_list {
-    margin: 5px -10px; }
-    #wrapper #content #publications #publications_list .pub_card {
-      border-radius: .5em;
-      padding: 15px 10px;
-      background-color: #fafafa;
-      box-shadow: -4px -4px 4px 0 rgba(255, 255, 255, 0.8), 4px 4px 4px 0 rgba(0, 0, 0, 0.05);
-      transition: box-shadow 250ms, background-color 250ms; }
-      #wrapper #content #publications #publications_list .pub_card:not(:first-child) {
-        margin-top: 10px; }
-      #wrapper #content #publications #publications_list .pub_card:hover {
-        box-shadow: -4px -4px 4px 0 white, 4px 4px 4px 0 rgba(0, 0, 0, 0.1); }
-      #wrapper #content #publications #publications_list .pub_card:active {
-        box-shadow: inset -4px -4px 4px 0 rgba(255, 255, 255, 0.3), inset 4px 4px 4px 0 rgba(0, 0, 0, 0.05); }
-    @media screen and (max-width: 1024px) {
-      #wrapper #content #publications #publications_list .pub_card {
-        background-color: #fafafa;
-        box-shadow: -4px -4px 4px 0 rgba(255, 255, 255, 0.8), 4px 4px 4px 0 rgba(0, 0, 0, 0.05);
-        margin: 0 20px 20px 10px; }
-        #wrapper #content #publications #publications_list .pub_card:active {
-          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); }
-      #wrapper #content #publications #publications_list::-webkit-scrollbar {
-        width: 0px;
-        background: transparent; } }
+  margin-top: 20px;
+}
+#wrapper #content #publications #publications_header {
+  display: flex;
+}
+#wrapper #content #publications #publications_list {
+  margin: 5px -10px;
+}
+#wrapper #content #publications #publications_list .pub_card {
+  border-radius: 0.5em;
+  padding: 15px 10px;
+  background-color: #fafafa;
+  box-shadow: -4px -4px 4px 0 rgba(255, 255, 255, 0.8), 4px 4px 4px 0 rgba(0, 0, 0, 0.05);
+  transition: box-shadow 250ms, background-color 250ms;
+}
+#wrapper #content #publications #publications_list .pub_card:not(:first-child) {
+  margin-top: 10px;
+}
+#wrapper #content #publications #publications_list .pub_card:hover {
+  box-shadow: -4px -4px 4px 0 white, 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+#wrapper #content #publications #publications_list .pub_card:active {
+  box-shadow: inset -4px -4px 4px 0 rgba(255, 255, 255, 0.3), inset 4px 4px 4px 0 rgba(0, 0, 0, 0.05);
+}
+@media screen and (max-width: 1024px) {
+  #wrapper #content #publications #publications_list .pub_card {
+    background-color: #fafafa;
+    box-shadow: -4px -4px 4px 0 rgba(255, 255, 255, 0.8), 4px 4px 4px 0 rgba(0, 0, 0, 0.05);
+    margin: 0 20px 20px 10px;
+  }
+  #wrapper #content #publications #publications_list .pub_card:active {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  }
+  #wrapper #content #publications #publications_list::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+}
 #wrapper #content #footer {
   display: flex;
   flex-direction: row;
-  margin: 20px 0; }
-  #wrapper #content #footer #communication {
-    color: #666666; }
-    #wrapper #content #footer #communication a {
-      color: #666666; }
-    #wrapper #content #footer #communication a:hover, #wrapper #content #footer #communication a:visited, #wrapper #content #footer #communication a:link, #wrapper #content #footer #communication a:active {
-      text-decoration: none;
-      color: inherit; }
-    #wrapper #content #footer #communication a:hover {
-      color: #292929; }
-    #wrapper #content #footer #communication .github {
-      display: none; }
-  #wrapper #content #footer .middot {
-    margin: 0 5px;
-    color: #666666; }
-  #wrapper #content #footer #locations {
-    color: #666666; }
-    #wrapper #content #footer #locations a:hover, #wrapper #content #footer #locations a:visited, #wrapper #content #footer #locations a:link, #wrapper #content #footer #locations a:active {
-      text-decoration: none;
-      color: inherit; }
-    #wrapper #content #footer #locations a {
-      color: #292929; }
-    #wrapper #content #footer #locations .msk:hover {
-      color: #007FFF; }
-    #wrapper #content #footer #locations .cam:hover {
-      color: #A3C1AD; }
-    #wrapper #content #footer #locations .hd:hover {
-      color: #A50050; }
-    #wrapper #content #footer #locations .hidden {
-      margin: 0;
-      padding: 0;
-      color: white; }
+  margin: 20px 0;
+}
+#wrapper #content #footer #communication {
+  color: #666666;
+}
+#wrapper #content #footer #communication a {
+  color: #666666;
+}
+#wrapper #content #footer #communication a:hover, #wrapper #content #footer #communication a:visited, #wrapper #content #footer #communication a:link, #wrapper #content #footer #communication a:active {
+  text-decoration: none;
+  color: inherit;
+}
+#wrapper #content #footer #communication a:hover {
+  color: #292929;
+}
+#wrapper #content #footer #communication .github {
+  display: none;
+}
+#wrapper #content #footer .middot {
+  margin: 0 5px;
+  color: #666666;
+}
+#wrapper #content #footer #locations {
+  color: #666666;
+}
+#wrapper #content #footer #locations a:hover, #wrapper #content #footer #locations a:visited, #wrapper #content #footer #locations a:link, #wrapper #content #footer #locations a:active {
+  text-decoration: none;
+  color: inherit;
+}
+#wrapper #content #footer #locations a {
+  color: #292929;
+}
+#wrapper #content #footer #locations .msk:hover {
+  color: #007FFF;
+}
+#wrapper #content #footer #locations .cam:hover {
+  color: #A3C1AD;
+}
+#wrapper #content #footer #locations .hd:hover {
+  color: #A50050;
+}
+#wrapper #content #footer #locations .hidden {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
 
 /*# sourceMappingURL=light.css.map */
