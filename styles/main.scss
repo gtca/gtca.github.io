@@ -96,12 +96,21 @@ html, body {
          &:first-child {
           margin-top: 0;
          }
+         @media only screen and (max-width: 1024px) {
+           & {
+            font-size: 3rem;
+            margin-top: 3rem;
+           }
+          }
        }
        .what {
          margin: 0;
          margin-bottom: 4px;
          &:last-child {
           margin-bottom: 0;
+         }
+         @media only screen and (max-width: 1024px) {
+          margin-bottom: 1rem;
          }
        }
        a:hover, a:visited, a:link, a:active {
@@ -174,6 +183,9 @@ html, body {
              #contributions_title, #contributions_profile {
               font-size: 3rem;
               margin: 0;
+             }
+             #contributions_profile a {
+              padding: 0;
              }
            }
        }
@@ -273,6 +285,14 @@ html, body {
              #publications_title, #publications_profile {
               font-size: 3rem;
               margin: 0;
+             }
+             #publications_profile {
+                a {
+                  padding-left: 2rem;
+                }
+                a:first-child {
+                  padding: 0;
+                }
              }
            }
        }

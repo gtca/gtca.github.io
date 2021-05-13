@@ -99,12 +99,23 @@ html, body {
 #wrapper #content #occupation .when:first-child {
   margin-top: 0;
 }
+@media only screen and (max-width: 1024px) {
+  #wrapper #content #occupation .when {
+    font-size: 3rem;
+    margin-top: 3rem;
+  }
+}
 #wrapper #content #occupation .what {
   margin: 0;
   margin-bottom: 4px;
 }
 #wrapper #content #occupation .what:last-child {
   margin-bottom: 0;
+}
+@media only screen and (max-width: 1024px) {
+  #wrapper #content #occupation .what {
+    margin-bottom: 1rem;
+  }
 }
 #wrapper #content #occupation a:hover, #wrapper #content #occupation a:visited, #wrapper #content #occupation a:link, #wrapper #content #occupation a:active {
   text-decoration: none;
@@ -177,6 +188,9 @@ html, body {
   #wrapper #content #contributions #contributions_header #contributions_title, #wrapper #content #contributions #contributions_header #contributions_profile {
     font-size: 3rem;
     margin: 0;
+  }
+  #wrapper #content #contributions #contributions_header #contributions_profile a {
+    padding: 0;
   }
 }
 #wrapper #content #contributions #contributions_list .contrib_card {
@@ -270,6 +284,12 @@ html, body {
   #wrapper #content #publications #publications_header #publications_title, #wrapper #content #publications #publications_header #publications_profile {
     font-size: 3rem;
     margin: 0;
+  }
+  #wrapper #content #publications #publications_header #publications_profile a {
+    padding-left: 2rem;
+  }
+  #wrapper #content #publications #publications_header #publications_profile a:first-child {
+    padding: 0;
   }
 }
 #wrapper #content #publications #publications_list .pub_card {
