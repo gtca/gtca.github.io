@@ -474,6 +474,17 @@ html, body {
               opacity: .5;
             }
 
+
+            @media only screen and (max-width: 1300px) {
+              min-width: 30%;
+              h4 {
+                font-size: .5rem;
+                padding-bottom: 1rem;
+              }
+              font-size: .5rem;
+              line-height: .7rem;
+            }
+
           }
           &::after {
             content: "\a0\a0\a0\a0\a0\a0\a0";

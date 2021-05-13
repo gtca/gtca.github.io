@@ -388,6 +388,17 @@ html #wrapper #content_cover #content #showcase .showcase_element a .clickable, 
 html #wrapper #content_cover #content #showcase .showcase_element.showcase_element_tbd, body #wrapper #content_cover #content #showcase .showcase_element.showcase_element_tbd {
   opacity: 0.5;
 }
+@media only screen and (max-width: 1300px) {
+  html #wrapper #content_cover #content #showcase .showcase_element, body #wrapper #content_cover #content #showcase .showcase_element {
+    min-width: 30%;
+    font-size: 0.5rem;
+    line-height: 0.7rem;
+  }
+  html #wrapper #content_cover #content #showcase .showcase_element h4, body #wrapper #content_cover #content #showcase .showcase_element h4 {
+    font-size: 0.5rem;
+    padding-bottom: 1rem;
+  }
+}
 html #wrapper #content_cover #content #showcase::after, body #wrapper #content_cover #content #showcase::after {
   content: "       ";
 }
