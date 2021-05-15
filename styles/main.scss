@@ -30,6 +30,16 @@ html, body {
 
     @media screen and (max-width: 1024px) {
       align-self: flex-end;
+      right: 20px;
+      bottom: 20px;
+      &:hover {
+        right: 10px;
+        bottom: 10px;
+      }
+    }
+
+    @media screen and (max-device-width: 1024px) {
+      align-self: flex-end;
       width: 4rem;
       height: 4rem;
       bottom: 2rem;
@@ -65,7 +75,7 @@ html, body {
           font-size: 20pt;
           font-family: 'Nunito', sans-serif;
           margin: 0;
-          @media only screen and (max-width: 1024px) {
+          @media only screen and (max-device-width: 1024px) {
             font-size: 4rem;
           }
        }
@@ -80,7 +90,7 @@ html, body {
      }
      #occupation {
        font-family: 'Quattrocento Sans', sans-serif;
-        @media only screen and (max-width: 1024px) {
+        @media only screen and (max-device-width: 1024px) {
           margin-top: 2rem;
           font-size: 2rem;
         }
@@ -96,7 +106,7 @@ html, body {
          &:first-child {
           margin-top: 0;
          }
-         @media only screen and (max-width: 1024px) {
+         @media only screen and (max-device-width: 1024px) {
            & {
             font-size: 3rem;
             margin-top: 3rem;
@@ -109,7 +119,7 @@ html, body {
          &:last-child {
           margin-bottom: 0;
          }
-         @media only screen and (max-width: 1024px) {
+         @media only screen and (max-device-width: 1024px) {
           margin-bottom: 1rem;
          }
        }
@@ -177,7 +187,7 @@ html, body {
              }
            }
 
-           @media screen and (max-width: 1024px) {
+           @media screen and (max-device-width: 1024px) {
              margin-top: 4rem;
              flex-direction: column;
              #contributions_title, #contributions_profile {
@@ -224,7 +234,7 @@ html, body {
               flex: 9;
            }
 
-           @media screen and (max-width: 1024px) {
+           @media screen and (max-device-width: 1024px) {
              margin-bottom: 1rem;
              flex-direction: column;
              .contrib_title, .contrib_info {
@@ -279,7 +289,7 @@ html, body {
               color: $scholar_blue;
              }
            }
-           @media screen and (max-width: 1024px) {
+           @media screen and (max-device-width: 1024px) {
              margin-top: 4rem;
              flex-direction: column;
              #publications_title, #publications_profile {
@@ -301,7 +311,7 @@ html, body {
            position: relative;
            max-width: 500px;
            z-index: 1;
-           @media screen and (max-width: 1024px) {
+           @media screen and (max-device-width: 1024px) {
             max-width: 100%;
             padding-top: 2rem !important;
             padding-bottom: 2rem !important;
@@ -333,7 +343,7 @@ html, body {
            }
          }
 
-         @media screen and (max-width: 1024px) {
+         @media screen and (max-device-width: 1024px) {
 
           .pubication_list {
 
@@ -378,7 +388,7 @@ html, body {
        display: flex;
        flex-direction: row;
        margin: 20px 0;
-       @media screen and (max-width: 1024px) {
+       @media screen and (max-device-width: 1024px) {
         font-size: 2rem;
        }
 

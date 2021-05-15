@@ -29,6 +29,17 @@ html, body {
 @media screen and (max-width: 1024px) {
   #wrapper #lights {
     align-self: flex-end;
+    right: 20px;
+    bottom: 20px;
+  }
+  #wrapper #lights:hover {
+    right: 10px;
+    bottom: 10px;
+  }
+}
+@media screen and (max-device-width: 1024px) {
+  #wrapper #lights {
+    align-self: flex-end;
     width: 4rem;
     height: 4rem;
     bottom: 2rem;
@@ -66,7 +77,7 @@ html, body {
   font-family: "Nunito", sans-serif;
   margin: 0;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-device-width: 1024px) {
   #wrapper #content #title #name {
     font-size: 4rem;
   }
@@ -80,7 +91,7 @@ html, body {
 #wrapper #content #occupation {
   font-family: "Quattrocento Sans", sans-serif;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-device-width: 1024px) {
   #wrapper #content #occupation {
     margin-top: 2rem;
     font-size: 2rem;
@@ -99,7 +110,7 @@ html, body {
 #wrapper #content #occupation .when:first-child {
   margin-top: 0;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-device-width: 1024px) {
   #wrapper #content #occupation .when {
     font-size: 3rem;
     margin-top: 3rem;
@@ -112,7 +123,7 @@ html, body {
 #wrapper #content #occupation .what:last-child {
   margin-bottom: 0;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-device-width: 1024px) {
   #wrapper #content #occupation .what {
     margin-bottom: 1rem;
   }
@@ -180,7 +191,7 @@ html, body {
 #wrapper #content #contributions #contributions_header #contributions_profile .github:hover {
   color: black;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   #wrapper #content #contributions #contributions_header {
     margin-top: 4rem;
     flex-direction: column;
@@ -223,7 +234,7 @@ html, body {
   flex-direction: column;
   flex: 9;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   #wrapper #content #contributions #contributions_list .contrib_card {
     margin-bottom: 1rem;
     flex-direction: column;
@@ -276,7 +287,7 @@ html, body {
 #wrapper #content #publications #publications_header #publications_profile .scolar:hover {
   color: #4285F4;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   #wrapper #content #publications #publications_header {
     margin-top: 4rem;
     flex-direction: column;
@@ -297,7 +308,7 @@ html, body {
   max-width: 500px;
   z-index: 1;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   #wrapper #content #publications #publications_list .pub_card {
     max-width: 100%;
     padding-top: 2rem !important;
@@ -324,7 +335,7 @@ html, body {
 #wrapper #content #publications #publications_list .pub_card .pub_alias {
   display: none;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   #wrapper #content #publications #publications_list .pubication_list {
     flex-direction: column;
   }
@@ -359,7 +370,7 @@ html, body {
   flex-direction: row;
   margin: 20px 0;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   #wrapper #content #footer {
     font-size: 2rem;
   }
