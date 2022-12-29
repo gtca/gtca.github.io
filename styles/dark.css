@@ -1,156 +1,134 @@
 html, body {
   transition: background-color 250ms;
-  background-color: black;
-  margin: 0;
+  overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  background-color: #131313;
+  color: #dadada;
 }
 
-#wrapper {
-  transition: background-color 250ms;
-  background-color: black;
+::-webkit-scrollbar {
+  display: none;
 }
+
 #wrapper #lights {
   border-color: white;
 }
 #wrapper #lights:hover {
   background-color: white;
 }
-#wrapper #content {
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-}
-#wrapper #content #title {
-  text-align: center;
-}
 #wrapper #content #title #name {
-  color: white;
-}
-@media screen and (min-device-width: 1300px) {
-  #wrapper #content #title #name {
-    color: #aaaaaa;
-    font-size: 3em;
-  }
+  color: #eaeaea;
 }
 #wrapper #content #title #desc {
-  display: block;
-  color: #666666;
-  text-align: center;
-}
-#wrapper #content #title #desc a:hover, #wrapper #content #title #desc a:visited, #wrapper #content #title #desc a:link, #wrapper #content #title #desc a:active {
-  text-decoration: none;
-  color: inherit;
-}
-#wrapper #content #title #desc a:hover {
-  color: #cccccc;
-}
-#wrapper #content #title #desc .embl:hover {
-  color: #5e801a;
-}
-#wrapper #content #title #desc .twitter:hover {
-  color: #38A1F3;
-}
-@media screen and (min-device-width: 1300px) {
-  #wrapper #content #title #desc {
-    font-size: 1.5em;
-  }
+  display: none;
+  color: #eaeaea;
 }
 #wrapper #content #title #motivation {
-  display: none;
-}
-#wrapper #content #occupation {
-  display: none;
+  color: #eaeaea;
+  padding: 0;
+  margin: 0;
+  font-size: 12pt;
+  font-family: serif;
 }
 #wrapper #content #announcement {
-  display: none;
+  margin: 5px -10px;
+}
+#wrapper #content #announcement .att_card {
+  position: relative;
+  max-width: 500px;
+  z-index: 1;
+  border: 0.1rem solid #F88379CC;
+  border-radius: 0.5em;
+  padding: 15px 10px;
+  margin: 10px 0 20px 0;
+  color: #F88379CC;
+  transition: box-shadow 250ms, background-color 250ms;
+}
+#wrapper #content #announcement .att_card .att_text a {
+  text-decoration: none;
+  border-bottom: 1px solid #F8837955;
+  color: inherit;
+  transition: border 500ms, color 500ms;
+}
+#wrapper #content #announcement .att_card .att_text a:hover {
+  border-bottom: 1px solid #F88379;
+  color: #F88379;
+}
+@media screen and (max-device-width: 1024px) {
+  #wrapper #content #announcement .att_card {
+    max-width: 100%;
+    padding: 2rem 1rem;
+    margin: 0 2rem 2rem 0;
+    border-radius: 1rem;
+  }
+  #wrapper #content #announcement::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
 }
 #wrapper #content #contributions {
-  margin: 20px 0;
+  margin: 40px 0 20px 0;
 }
 #wrapper #content #contributions #contributions_header {
-  display: none;
-}
-#wrapper #content #contributions #contributions_list {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
 }
-#wrapper #content #contributions #contributions_list .contrib_card {
-  padding: 5px 10px;
-  width: auto;
-  align-self: center;
+#wrapper #content #contributions #contributions_header #contributions_profile .github:hover {
+  color: #882893;
 }
 #wrapper #content #contributions #contributions_list .contrib_card .contrib_title a {
-  width: fit-content;
-  text-decoration: none;
-  color: #666666;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid #cccccc;
+  color: #cccccc;
+  transition: border 250ms, color 250ms;
+}
+#wrapper #content #contributions #contributions_list .contrib_card .contrib_title a img {
+  transition: all 250ms;
+  filter: invert(50%);
 }
 #wrapper #content #contributions #contributions_list .contrib_card .contrib_title a:hover {
-  color: #eaeaea !important;
+  border-bottom: 1px solid white;
+  color: white;
+}
+#wrapper #content #contributions #contributions_list .contrib_card .contrib_title a:hover img {
+  filter: invert(100%);
 }
 #wrapper #content #contributions #contributions_list .contrib_card .contrib_info {
-  display: none;
+  color: #888888;
+  display: flex;
 }
-@media screen and (min-device-width: 1300px) {
-  #wrapper #content #contributions #contributions_list .contrib_card {
-    padding: 5px 30px;
-  }
-  #wrapper #content #contributions #contributions_list .contrib_card .contrib_title a {
-    font-size: 4em;
-    font-family: sans-serif;
-  }
+#wrapper #content #publications {
+  margin-top: 20px;
 }
 #wrapper #content #publications #publications_header {
-  display: none;
+  display: flex;
 }
 #wrapper #content #publications #publications_list {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin: 10px -10px;
 }
 #wrapper #content #publications #publications_list .pub_card {
-  border-radius: 5px;
-  padding: 5px 10px;
-  width: auto;
-  align-self: center;
+  border-radius: 0.5em;
+  padding: 15px 10px;
+  transition: box-shadow 250ms, background-color 250ms;
 }
-#wrapper #content #publications #publications_list .pub_card .pub_alias {
-  display: block;
-  color: #666666;
-  font-size: 3em;
+#wrapper #content #publications #publications_list .pub_card:not(:first-child) {
+  margin-top: 10px;
 }
-#wrapper #content #publications #publications_list .pub_card .pub_alias a:visited, #wrapper #content #publications #publications_list .pub_card .pub_alias a:link, #wrapper #content #publications #publications_list .pub_card .pub_alias a:active {
-  text-decoration: none;
-  color: inherit;
+#wrapper #content #publications #publications_list .pub_card:hover, #wrapper #content #publications #publications_list .pub_card:active {
+  background-color: #333333;
 }
-#wrapper #content #publications #publications_list .pub_card .pub_alias a:hover {
-  color: #cccccc;
-}
-#wrapper #content #publications #publications_list .pub_card .clickable {
-  display: none;
-}
-#wrapper #content #publications #publications_list .pub_card .pub_title {
-  display: none;
-}
-#wrapper #content #publications #publications_list .pub_card .pub_info {
-  display: none;
-  color: #666666;
-}
-@media screen and (min-device-width: 1300px) {
+@media screen and (max-width: 1024px) {
   #wrapper #content #publications #publications_list .pub_card {
-    padding: 5px 30px;
+    margin: 0 20px 20px 10px;
   }
-  #wrapper #content #publications #publications_list .pub_card .pub_alias {
-    font-size: 4em;
-    font-family: sans-serif;
+  #wrapper #content #publications #publications_list::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
   }
 }
 #wrapper #content #footer {
   display: flex;
   flex-direction: row;
-  margin: 75px 0;
+  margin: 20px 0;
 }
 #wrapper #content #footer #communication {
   color: #666666;
@@ -163,7 +141,10 @@ html, body {
   color: inherit;
 }
 #wrapper #content #footer #communication a:hover {
-  color: #cccccc;
+  color: white;
+}
+#wrapper #content #footer #communication .github {
+  display: none;
 }
 #wrapper #content #footer .middot {
   margin: 0 5px;
@@ -192,11 +173,6 @@ html, body {
   margin: 0;
   padding: 0;
   color: white;
-}
-@media screen and (min-device-width: 1300px) {
-  #wrapper #content #footer {
-    font-size: 1.5em;
-  }
 }
 
 /*# sourceMappingURL=dark.css.map */

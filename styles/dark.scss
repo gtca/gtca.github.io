@@ -1,14 +1,21 @@
 @import 'colours';
 
+$theme_transition: 250ms;
+
 html, body {
-  transition: background-color 250ms;
-  background-color: black;
-  margin: 0;
+  transition: background-color $theme_transition;
+  overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  background-color: $darkgrey;
+  color: $grey1_1;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 #wrapper {
-  transition: background-color 250ms;
-  background-color: black;
 
   #lights {
     border-color: white;
@@ -18,152 +25,158 @@ html, body {
   }
 
   #content {
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
 
     #title {
-        text-align: center;
-        #name {
-          color: white;
-          @media screen and (min-width: 1300px) {
-            color: $grey1_5;
-            font-size: 3em;
-          }
-        }
+       #name {
+         color: $grey1;
+       }
        #desc {
-         display: block;
-         color: $grey2;
-         text-align: center;
-
-         a:hover, a:visited, a:link, a:active {
-           text-decoration: none;
-           color: inherit;
-         }
-         a:hover {
-           color: $grey1_c;
-         }
-         .embl:hover {
-           color: $green;
-         }
-         .twitter:hover {
-           color: $twitter_blue;
-         }
-         @media screen and (min-width: 1300px) {
-           font-size: 1.5em;
-         }
+         display: none;
+         color: $grey1;
        }
        #motivation {
-        display: none;
+         color: $grey1;
+         padding: 0;
+         // margin-top: 30px;
+         margin: 0;
+         font-size: 12pt;
+         font-family: serif;
        }
      }
      #occupation {
-      display: none;
+       
      }
      #announcement {
-      display: none;
+       margin: 5px -10px;
+       .att_card {
+         position: relative;
+         max-width: 500px;
+         z-index: 1;
+
+	 border: .1rem solid $coral_pink_muted;
+         border-radius: .5em;
+         padding: 15px 10px;
+         margin: 10px 0 20px 0;
+
+         color: $coral_pink_muted;
+         // background: linear-gradient(145deg, #ff8c81, #df766d);
+         
+         
+         transition: box-shadow $theme_transition, background-color $theme_transition;
+
+         .att_text {
+            a {
+              text-decoration: none;
+              border-bottom: 1px solid $coral_pink_muted2;
+              color: inherit;
+              transition: border 500ms, color 500ms;
+              &:hover {
+                border-bottom: 1px solid $coral_pink;
+                color: $coral_pink;
+              }
+            }
+         }
+       }
+       @media screen and (max-device-width: 1024px) {
+        .att_card {
+            max-width: 100%;
+            padding: 2rem 1rem;
+            margin: 0 2rem 2rem 0;
+            border-radius: 1rem;
+        }
+        &::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+       }
      }
      #contributions {
-       margin: 20px 0;
-
+       margin: 40px 0 20px 0;
        #contributions_header {
-        display: none;
+            display: flex;
+	    #contributions_profile {
+		.github:hover {
+		    color: $github_violet;
+		}
+	    }
        }
        #contributions_list {
-         display: flex;
-         flex-direction: row;
-         justify-content: center;
-         flex-wrap: wrap;
-         
          .contrib_card {
-           padding: 5px 10px;
-           width: auto;
-           align-self: center;
 
            .contrib_title {
               a {
-                width: fit-content;
-                text-decoration: none;
-                color: $grey2;
-                border-bottom: 1px solid transparent;
+                border-bottom: 1px solid $grey1_c;
+                color: $grey1_c;
+                transition: border $theme_transition, color $theme_transition;
+
+	        img {
+                  transition: all $theme_transition;
+	  	  filter: invert(50%);
+	        }
               }
               a:hover {
-                color: $grey1 !important;
+                border-bottom: 1px solid white;
+                color: white; 
+		img {
+		  filter: invert(100%);
+		}
               }
            }
            
            .contrib_info {
-             display: none;
+	      color: $grey1_8;
+              display: flex;
            }
-         }
-         @media screen and (min-width: 1300px) {
-          .contrib_card {
-            padding: 5px 30px;
-            .contrib_title a {
-               font-size: 4em;
-               font-family: sans-serif;
-            }
-          }
          }
        }
      }
-     
      #publications {
+       margin-top: 20px;
        #publications_header {
-        display: none;
+            display: flex;
        }
        #publications_list {
-         display: flex;
-         flex-direction: row;
-         justify-content: center;
-         flex-wrap: wrap;
+         margin: 10px -10px;
          .pub_card {
-           border-radius: 5px;
-           padding: 5px 10px;
-           width: auto;
-           align-self: center;
+           border-radius: .5em;
+           padding: 15px 10px;
+           &:not(:first-child) {
+            margin-top: 10px;
+           }
 
-           .pub_alias {
-             display: block;
-             color: $grey2;
-             font-size: 3em;
-             a:visited, a:link, a:active {
-               text-decoration: none;
-               color: inherit;
-             }
-             a:hover {
-              color: $grey1_c;
-             }
+           &:hover, &:active {
+	     background-color: $grey1_3;
            }
 
            .clickable {
-             display: none;
            }
            .pub_title {
-              display: none;
+
            }
            .pub_links {
            }
            .pub_info {
-             display: none;
-             color: $grey2;
            }
+           
+           transition: box-shadow $theme_transition, background-color $theme_transition;
          }
-         @media screen and (min-width: 1300px) {
-          .pub_card {
-            padding: 5px 30px;
-            .pub_alias {
-               font-size: 4em;
-               font-family: sans-serif;
-            }
-          }
+         @media screen and (max-width: 1024px) {
+
+           .pub_card {
+             
+             margin: 0 20px 20px 10px;
+           }
+           &::-webkit-scrollbar {
+              width: 0px;
+              background: transparent;
+           }
          }
        }
      }
      #footer {
        display: flex;
        flex-direction: row;
-       margin: 75px 0;
+       margin: 20px 0;
        #communication {
          color: $grey2;
          a {
@@ -174,7 +187,10 @@ html, body {
            color: inherit;
          }
          a:hover {
-           color: $grey1_c;
+           color: white;
+         }
+         .github {
+           display: none;
          }
        }
        .middot {
@@ -204,9 +220,6 @@ html, body {
             padding: 0;
             color: white;
          }
-       }
-       @media screen and (min-width: 1300px) {
-         font-size: 1.5em;
        }
      }
   }

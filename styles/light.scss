@@ -47,29 +47,27 @@ html, body {
          position: relative;
          max-width: 500px;
          z-index: 1;
+
+	 border: .1rem solid $coral_pink_muted;
          border-radius: .5em;
          padding: 15px 10px;
          margin: 10px 0 20px 0;
 
-         background-color: $coral_pink_muted;
+         color: $coral_pink_muted;
          // background: linear-gradient(145deg, #ff8c81, #df766d);
          
-         box-shadow: -4px -4px 4px 0 rgba(255,255,255,1),
-                     4px 4px 4px 0 rgba(0,0,0,.1);
-
-         color: $grey3;
          
          transition: box-shadow $theme_transition, background-color $theme_transition;
 
          .att_text {
             a {
               text-decoration: none;
-              border-bottom: 1px solid $grey2;
+              border-bottom: 1px solid $coral_pink_muted2;
               color: inherit;
               transition: border 500ms, color 500ms;
               &:hover {
-                border-bottom: 1px solid $grey3;
-                color: black;
+                border-bottom: 1px solid $coral_pink;
+                color: $coral_pink;
               }
             }
          }
@@ -119,7 +117,7 @@ html, body {
             display: flex;
        }
        #publications_list {
-         margin: 5px -10px;
+         margin: 10px -10px;
          .pub_card {
            border-radius: .5em;
            padding: 15px 10px;
@@ -128,18 +126,11 @@ html, body {
            }
 
            background-color: $white1;
-           box-shadow: -4px -4px 4px 0 rgba(255,255,255,.8),
-                       4px 4px 4px 0 rgba(0,0,0,.05);
 
-           &:hover {
-             box-shadow: -4px -4px 4px 0 rgba(255,255,255,1),
-                         4px 4px 4px 0 rgba(0,0,0,.1);
+           &:hover, &:active {
+	     background-color: $grey1;
            }
 
-           &:active {
-            box-shadow: inset -4px -4px 4px 0 rgba(255,255,255,.3),
-                        inset 4px 4px 4px 0 rgba(0,0,0,.05);
-           }
 
            .clickable {
            }
@@ -157,15 +148,10 @@ html, body {
 
            .pub_card {
              
-             background-color: $white1;
-             box-shadow: -4px -4px 4px 0 rgba(255,255,255,.8),
-                         4px 4px 4px 0 rgba(0,0,0,.05);
-
              margin: 0 20px 20px 10px;
 
 
              &:active {
-               box-shadow: 0 3px 5px rgba(0,0,0,0.30);
              }
            }
            &::-webkit-scrollbar {

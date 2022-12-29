@@ -33,23 +33,22 @@ html, body {
   position: relative;
   max-width: 500px;
   z-index: 1;
+  border: 0.1rem solid #F88379CC;
   border-radius: 0.5em;
   padding: 15px 10px;
   margin: 10px 0 20px 0;
-  background-color: #F88379DD;
-  box-shadow: -4px -4px 4px 0 white, 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
-  color: #292929;
+  color: #F88379CC;
   transition: box-shadow 250ms, background-color 250ms;
 }
 #wrapper #content #announcement .att_card .att_text a {
   text-decoration: none;
-  border-bottom: 1px solid #666666;
+  border-bottom: 1px solid #F8837955;
   color: inherit;
   transition: border 500ms, color 500ms;
 }
 #wrapper #content #announcement .att_card .att_text a:hover {
-  border-bottom: 1px solid #292929;
-  color: black;
+  border-bottom: 1px solid #F88379;
+  color: #F88379;
 }
 @media screen and (max-device-width: 1024px) {
   #wrapper #content #announcement .att_card {
@@ -88,32 +87,23 @@ html, body {
   display: flex;
 }
 #wrapper #content #publications #publications_list {
-  margin: 5px -10px;
+  margin: 10px -10px;
 }
 #wrapper #content #publications #publications_list .pub_card {
   border-radius: 0.5em;
   padding: 15px 10px;
   background-color: #fafafa;
-  box-shadow: -4px -4px 4px 0 rgba(255, 255, 255, 0.8), 4px 4px 4px 0 rgba(0, 0, 0, 0.05);
   transition: box-shadow 250ms, background-color 250ms;
 }
 #wrapper #content #publications #publications_list .pub_card:not(:first-child) {
   margin-top: 10px;
 }
-#wrapper #content #publications #publications_list .pub_card:hover {
-  box-shadow: -4px -4px 4px 0 white, 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
-}
-#wrapper #content #publications #publications_list .pub_card:active {
-  box-shadow: inset -4px -4px 4px 0 rgba(255, 255, 255, 0.3), inset 4px 4px 4px 0 rgba(0, 0, 0, 0.05);
+#wrapper #content #publications #publications_list .pub_card:hover, #wrapper #content #publications #publications_list .pub_card:active {
+  background-color: #eaeaea;
 }
 @media screen and (max-width: 1024px) {
   #wrapper #content #publications #publications_list .pub_card {
-    background-color: #fafafa;
-    box-shadow: -4px -4px 4px 0 rgba(255, 255, 255, 0.8), 4px 4px 4px 0 rgba(0, 0, 0, 0.05);
     margin: 0 20px 20px 10px;
-  }
-  #wrapper #content #publications #publications_list .pub_card:active {
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
   }
   #wrapper #content #publications #publications_list::-webkit-scrollbar {
     width: 0px;
