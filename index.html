@@ -12,6 +12,63 @@
          document.getElementById('stylesheet').setAttribute('href', (themeCookie == 'dark') ? 'styles/dark.css' : 'styles/light.css');
        }
     </script>
+    <script>
+       function hideModal() {
+             var overlay = document.getElementById("modaloverlay");
+             var modal = document.getElementById("modal");
+	     modal.classList.remove("addmodal");
+	     void modal.offsetWidth;
+	     modal.classList.add("hidemodal");
+	     void modal.offsetWidth;
+	     setTimeout(function() {
+                 modal.remove();
+	     }, 200);
+             overlay.style.display = "none";
+       }
+
+       window.addEventListener("load", function() {
+           var overlay = document.getElementById("modaloverlay");
+           overlay.addEventListener("click", function() {
+	     hideModal();
+	   }, false);
+	   
+	   document.onkeydown = function(event) {
+	     event = event || window.event;
+	     var esc = false;
+	     if ("key" in event) {
+		esc = (event.key === "Escape" || event.key === "Esc");
+	     } else {
+		esc = (event.keyCode === 27);
+	     }
+	
+	     if (esc) {
+		hideModal();
+	     }
+	   }
+       });
+
+       var narrowWidth = window.matchMedia("(max-width: 1024px)");
+       var narrowDeviceWidth = window.matchMedia("(max-device-width: 1024px)");
+
+       function modalOpen(e, page) {
+	 if (narrowWidth.matches || narrowDeviceWidth.matches) {
+	     return true;
+	 }
+	 e.preventDefault();
+
+         var modal = document.createElement("iframe");
+	 modal.setAttribute("src", page);
+	 modal.setAttribute("id", "modal");
+	 modal.classList.add("addmodal");
+	 modal.frameBorder = 0;
+	 document.body.appendChild(modal);
+
+         var overlay = document.getElementById("modaloverlay");
+	 overlay.style.display = "block";
+
+	 return false;
+       }
+    </script>
   </head>
   <body>
     <div id="wrapper">
@@ -31,7 +88,7 @@
         </div>
         <div id="occupation">
           <div class="when">Currently</div>
-          <div class="what">PhD candidate in <a class="embl" href="https://www.embl.org/" target="_blank">EMBL</a> | <a href="https://www.embl.de/research/units/genome_biology/stegle/" target="_blank">Stegle group</a></div>
+          <div class="what">PhD candidate in <a class="embl" href="https://www.embl.org/" target="_blank">EMBL</a> | <a href="https://www.embl.org/groups/stegle/" target="_blank">Stegle group</a></div>
           <div class="when">Previously</div>
           <div class="what">Visiting scientist in <a class="sanger" href="https://www.sanger.ac.uk/group/stegle-and-theis-group/" target="_blank">Sanger Institute</a></div>
           <div class="what">Visiting researcher in <a class="dkfz" href="https://www.dkfz.de/en/bioinformatik-genomik-systemgenetik/" target="_blank">DKFZ</a></div>
@@ -40,7 +97,7 @@
         </div>
         <div id="contributions">
           <div id="contributions_header">
-            <div id="contributions_title">Contributions</div>
+            <div id="contributions_title">Projects</div>
             <div id="contributions_profile">
               <a href="https://github.com/gtca" target="_blank" class="github">GitHub</a>
             </div>
@@ -66,19 +123,19 @@
           </div>
           <div id="publications_list">
             <div class="pub_card">
-                <a href="https://muon.scverse.org/"><span class="clickable"></span></a>
+                <a href="/muon" onclick="modalOpen(event, '/muon')"><span class="clickable"></span></a>
                 <div class="pub_title">Multimodal omics analysis framework</div>
                 <div class="pub_alias"> <a href="muon/">muon</a></div>
                 <div class="pub_info">Genome Biology, February 2022</div>
             </div>
             <div class="pub_card">
-                <a href="mofa2/index.html"><span class="clickable"></span></a>
+                <a href="/mofa2" onclick="modalOpen(event, '/mofa2')"><span class="clickable"></span></a>
                 <div class="pub_title">Multimodal single-cell data integration framework</div>
                 <div class="pub_alias"> <a href="mofa2/">MOFA+</a></div>
                 <div class="pub_info">Genome Biology, May 2020</div>
             </div>
             <div class="pub_card">
-                <a href="zga/index.html"><span class="clickable"></span></a>
+                <a href="/zga" onclick="modalOpen(event, '/zga')"><span class="clickable"></span></a>
                 <div class="pub_title">CRISPRa screen for zygotic genome activation</div>
                 <div class="pub_alias"> <a href="zga/">Zygotic genome activation</a></div>
                 <div class="pub_info">Cell Systems, July 2020</div>
@@ -99,6 +156,8 @@
           </div>
         </div>
       </div>
+    </div>
+    <div id="modaloverlay">
     </div>
   </body>
 </html>
