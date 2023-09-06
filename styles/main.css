@@ -166,7 +166,7 @@ body {
 }
 @media only screen and (max-device-width: 1024px) {
   #wrapper #content #occupation .when {
-    font-size: 2rem;
+    font-size: 1rem;
     margin-top: 3rem;
   }
 }
