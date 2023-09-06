@@ -1,12 +1,13 @@
+$almost_white_bg: #f5f4f0;
+$twitter_blue: #38a1f3;
+$bioconductor_green: #73b93d;
 
-$twitter_blue: #38A1F3;
-$bioconductor_green: #73B93D;
-
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   margin: 0;
-  
+
   #wrapper {
     width: 100%;
     height: 100%;
@@ -18,7 +19,9 @@ html, body {
       justify-content: center;
       width: 100%;
       height: 100%;
-      
+
+      background-color: $almost_white_bg;
+
       background-image: url(cover.svg);
       background-repeat: no-repeat;
       background-size: cover;
@@ -32,7 +35,7 @@ html, body {
       @media only screen and (max-aspect-ratio: 7/8) {
         background-image: none;
       }
-    
+
       #left {
         width: 50%;
         height: 100%;
@@ -76,7 +79,6 @@ html, body {
             font-weight: 100;
             color: #777777;
             padding: 0;
-            
 
             .contributors {
               font-size: 14pt;
@@ -85,7 +87,10 @@ html, body {
               margin-top: 1em;
               color: darkgrey;
 
-              a:hover, a:visited, a:link, a:active {
+              a:hover,
+              a:visited,
+              a:link,
+              a:active {
                 text-decoration: none;
                 color: grey;
               }
@@ -116,7 +121,10 @@ html, body {
             position: relative;
             text-decoration: none;
             color: grey;
-            a:hover, a:visited, a:link, a:active {
+            a:hover,
+            a:visited,
+            a:link,
+            a:active {
               text-decoration: none;
               color: grey;
             }

@@ -1,8 +1,9 @@
-@import 'colours';
+@import "colours";
 
 $theme_transition: 250ms;
 
-html, body {
+html,
+body {
   transition: background-color $theme_transition;
   overflow: hidden;
   overflow-y: scroll;
@@ -14,7 +15,6 @@ html, body {
 }
 
 #wrapper {
-
   #lights {
     border-color: black;
     &:hover {
@@ -23,192 +23,199 @@ html, body {
   }
 
   #content {
-
     #title {
-       #desc {
-         display: none;
-         color: $grey3;
-       }
-       #motivation {
-         color: $grey2;
-         padding: 0;
-         // margin-top: 30px;
-         margin: 0;
-         font-size: 12pt;
-         font-family: serif;
-       }
-     }
-     #occupation {
-       
-     }
-     #announcement {
-       margin: 5px -10px;
-       .att_card {
-         position: relative;
-         max-width: 500px;
-         z-index: 1;
+      #desc {
+        display: none;
+        color: $grey3;
+      }
+      #motivation {
+        color: $grey2;
+        padding: 0;
+        // margin-top: 30px;
+        margin: 0;
+        font-size: 12pt;
+        font-family: serif;
+      }
+    }
+    #occupation {
+    }
+    #announcement {
+      margin: 5px -10px;
+      .att_card {
+        position: relative;
+        width: 20rem;
+        max-width: 500px;
+        z-index: 1;
 
-	 border: .1rem solid $coral_pink_muted;
-         border-radius: .5em;
-         padding: 15px 10px;
-         margin: 10px 0 20px 0;
+        border: 0.1rem solid $white3;
+        border-radius: 0.5em;
+        padding: 20px 10px;
+        margin: 10px 0 20px 0;
 
-         color: $coral_pink_muted;
-         // background: linear-gradient(145deg, #ff8c81, #df766d);
-         
-         
-         transition: box-shadow $theme_transition, background-color $theme_transition;
+        background-color: $white3;
+        // background: linear-gradient(145deg, #ff8c81, #df766d);
 
-         .att_text {
-            a {
-              text-decoration: none;
-              border-bottom: 1px solid $coral_pink_muted2;
-              color: inherit;
-              transition: border 500ms, color 500ms;
-              &:hover {
-                border-bottom: 1px solid $coral_pink;
-                color: $coral_pink;
-              }
+        &:hover {
+          // border: .1rem solid $coral_pink_muted;
+          background-color: $white4;
+        }
+
+        transition: box-shadow $theme_transition,
+          background-color $theme_transition, border-color $theme_transition;
+
+        .att_text {
+          a {
+            text-decoration: none;
+            border-bottom: 1px solid $coral_pink_muted2;
+            color: inherit;
+            transition: border 500ms, color 500ms;
+            &:hover {
+              border-bottom: 1px solid $coral_pink;
+              color: $coral_pink;
             }
-         }
-       }
-       @media screen and (max-device-width: 1024px) {
+          }
+        }
+      }
+      @media screen and (max-device-width: 1024px) {
         .att_card {
-            max-width: 100%;
-            padding: 2rem 1rem;
-            margin: 0 2rem 2rem 0;
-            border-radius: 1rem;
+          width: 100%;
+          padding: 2rem 1rem;
+          margin: 0 1rem 1rem 0;
+          border-radius: 1rem;
+          font-size: 2rem;
         }
         &::-webkit-scrollbar {
+          width: 0px;
+          background: transparent;
+        }
+      }
+    }
+    #contributions {
+      margin: 40px 0 20px 0;
+      #contributions_header {
+        display: flex;
+      }
+      #contributions_list {
+        .contrib_card {
+          .contrib_title {
+            a {
+              border-bottom: 1px solid $grey1;
+              color: $grey3;
+              transition: border $theme_transition, color $theme_transition;
+            }
+            a:hover {
+              border-bottom: 1px solid $grey3;
+              color: black;
+            }
+          }
+
+          .contrib_info {
+            display: flex;
+          }
+        }
+      }
+    }
+    #publications {
+      margin-top: 20px;
+      #publications_header {
+        display: flex;
+      }
+      #publications_list {
+        margin: 10px -10px;
+        .pub_card {
+          border-radius: 0.5em;
+          padding: 15px 10px;
+          &:not(:first-child) {
+            margin-top: 10px;
+          }
+
+          background-color: $white1;
+
+          &:hover,
+          &:active {
+            background-color: $grey1;
+          }
+
+          .clickable {
+          }
+          .pub_title {
+          }
+          .pub_links {
+          }
+          .pub_info {
+          }
+
+          transition: box-shadow $theme_transition,
+            background-color $theme_transition;
+        }
+        @media screen and (max-width: 1024px) {
+          .pub_card {
+            margin: 0 20px 20px 10px;
+
+            &:active {
+            }
+          }
+          &::-webkit-scrollbar {
             width: 0px;
             background: transparent;
+          }
         }
-       }
-     }
-     #contributions {
-       margin: 40px 0 20px 0;
-       #contributions_header {
-            display: flex;
-       }
-       #contributions_list {
-         .contrib_card {
-
-           .contrib_title {
-              a {
-                border-bottom: 1px solid $grey1;
-                color: $grey3;
-                transition: border $theme_transition, color $theme_transition;
-              }
-              a:hover {
-                border-bottom: 1px solid $grey3;
-                color: black; 
-              }
-           }
-           
-           .contrib_info {
-              display: flex;
-           }
-         }
-       }
-     }
-     #publications {
-       margin-top: 20px;
-       #publications_header {
-            display: flex;
-       }
-       #publications_list {
-         margin: 10px -10px;
-         .pub_card {
-           border-radius: .5em;
-           padding: 15px 10px;
-           &:not(:first-child) {
-            margin-top: 10px;
-           }
-
-           background-color: $white1;
-
-           &:hover, &:active {
-	     background-color: $grey1;
-           }
-
-
-           .clickable {
-           }
-           .pub_title {
-
-           }
-           .pub_links {
-           }
-           .pub_info {
-           }
-           
-           transition: box-shadow $theme_transition, background-color $theme_transition;
-         }
-         @media screen and (max-width: 1024px) {
-
-           .pub_card {
-             
-             margin: 0 20px 20px 10px;
-
-
-             &:active {
-             }
-           }
-           &::-webkit-scrollbar {
-              width: 0px;
-              background: transparent;
-           }
-         }
-       }
-     }
-     #footer {
-       display: flex;
-       flex-direction: row;
-       margin: 20px 0;
-       #communication {
-         color: $grey2;
-         a {
-           color: $grey2;
-         }
-         a:hover, a:visited, a:link, a:active {
-           text-decoration: none;
-           color: inherit;
-         }
-         a:hover {
-           color: $grey3;
-         }
-         .github {
+      }
+    }
+    #footer {
+      display: flex;
+      flex-direction: row;
+      margin: 20px 0;
+      #communication {
+        color: $grey2;
+        a {
+          color: $grey2;
+        }
+        a:hover,
+        a:visited,
+        a:link,
+        a:active {
+          text-decoration: none;
+          color: inherit;
+        }
+        a:hover {
+          color: $grey3;
+        }
+        .github {
           display: none;
-         }
-       }
-       .middot {
+        }
+      }
+      .middot {
         margin: 0 5px;
         color: $grey2;
-       }
-       #locations {
-         color: $grey2;
-         a:hover, a:visited, a:link, a:active {
-           text-decoration: none;
-           color: inherit;
-         }
-         a {
-           color: $grey3;
-         }
-         .msk:hover {
-           color: $azure;
-         }
-         .cam:hover {
-           color: $cam_blue;
-         }
-         .hd:hover {
-           color: $hd_pink;
-         }
-         .hidden {
-            margin: 0;
-            padding: 0;
-            color: white;
-         }
-       }
-     }
+      }
+      #locations {
+        color: $grey2;
+        a:hover,
+        a:visited,
+        a:link,
+        a:active {
+          text-decoration: none;
+          color: inherit;
+        }
+        a {
+          color: $grey3;
+        }
+        .msk:hover {
+          color: $azure;
+        }
+        .cam:hover {
+          color: $cam_blue;
+        }
+        .hd:hover {
+          color: $hd_pink;
+        }
+        .hidden {
+          margin: 0;
+          padding: 0;
+          color: white;
+        }
+      }
+    }
   }
 }

@@ -2,165 +2,293 @@
 <html>
   <head>
     <title>Danila Bredikhin</title>
-    <link rel="stylesheet" type="text/css" href="styles/main.css">
-    <link id="stylesheet" rel="stylesheet" type="text/css" href="styles/light.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <link
+      id="stylesheet"
+      rel="stylesheet"
+      type="text/css"
+      href="styles/light.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quattrocento+Sans"
+      rel="stylesheet"
+    />
     <script>
-       var themeCookie = document.cookie.replace(/(?:(?:^|.*;\s*)theme\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-       if (themeCookie) {
-         document.getElementById('stylesheet').setAttribute('href', (themeCookie == 'dark') ? 'styles/dark.css' : 'styles/light.css');
-       }
+      var themeCookie = document.cookie.replace(
+        /(?:(?:^|.*;\s*)theme\s*\=\s*([^;]*).*$)|^.*$/,
+        "$1"
+      );
+      if (themeCookie) {
+        document
+          .getElementById("stylesheet")
+          .setAttribute(
+            "href",
+            themeCookie == "dark" ? "styles/dark.css" : "styles/light.css"
+          );
+      }
     </script>
     <script>
-       function hideModal() {
-             var overlay = document.getElementById("modaloverlay");
-             var modal = document.getElementById("modal");
-	     modal.classList.remove("addmodal");
-	     void modal.offsetWidth;
-	     modal.classList.add("hidemodal");
-	     void modal.offsetWidth;
-	     setTimeout(function() {
-                 modal.remove();
-	     }, 200);
-             overlay.style.display = "none";
-       }
+      function hideModal() {
+        var overlay = document.getElementById("modaloverlay");
+        var modal = document.getElementById("modal");
+        modal.classList.remove("addmodal");
+        void modal.offsetWidth;
+        modal.classList.add("hidemodal");
+        void modal.offsetWidth;
+        setTimeout(function () {
+          modal.remove();
+        }, 200);
+        overlay.style.display = "none";
+      }
 
-       window.addEventListener("load", function() {
-           var overlay = document.getElementById("modaloverlay");
-           overlay.addEventListener("click", function() {
-	     hideModal();
-	   }, false);
-	   
-	   document.onkeydown = function(event) {
-	     event = event || window.event;
-	     var esc = false;
-	     if ("key" in event) {
-		esc = (event.key === "Escape" || event.key === "Esc");
-	     } else {
-		esc = (event.keyCode === 27);
-	     }
-	
-	     if (esc) {
-		hideModal();
-	     }
-	   }
-       });
+      window.addEventListener("load", function () {
+        var overlay = document.getElementById("modaloverlay");
+        overlay.addEventListener(
+          "click",
+          function () {
+            hideModal();
+          },
+          false
+        );
 
-       var narrowWidth = window.matchMedia("(max-width: 1024px)");
-       var narrowDeviceWidth = window.matchMedia("(max-device-width: 1024px)");
+        document.onkeydown = function (event) {
+          event = event || window.event;
+          var esc = false;
+          if ("key" in event) {
+            esc = event.key === "Escape" || event.key === "Esc";
+          } else {
+            esc = event.keyCode === 27;
+          }
 
-       function modalOpen(e, page) {
-	 if (narrowWidth.matches || narrowDeviceWidth.matches) {
-	     return true;
-	 }
-	 e.preventDefault();
+          if (esc) {
+            hideModal();
+          }
+        };
+      });
 
-         var modal = document.createElement("iframe");
-	 modal.setAttribute("src", page);
-	 modal.setAttribute("id", "modal");
-	 modal.classList.add("addmodal");
-	 modal.frameBorder = 0;
-	 document.body.appendChild(modal);
+      var narrowWidth = window.matchMedia("(max-width: 1024px)");
+      var narrowDeviceWidth = window.matchMedia("(max-device-width: 1024px)");
 
-         var overlay = document.getElementById("modaloverlay");
-	 overlay.style.display = "block";
+      function modalOpen(e, page) {
+        if (narrowWidth.matches || narrowDeviceWidth.matches) {
+          return true;
+        }
+        e.preventDefault();
 
-	 return false;
-       }
+        var modal = document.createElement("iframe");
+        modal.setAttribute("src", page);
+        modal.setAttribute("id", "modal");
+        modal.classList.add("addmodal");
+        modal.frameBorder = 0;
+        document.body.appendChild(modal);
+
+        var overlay = document.getElementById("modaloverlay");
+        overlay.style.display = "block";
+
+        return false;
+      }
     </script>
   </head>
   <body>
     <div id="wrapper">
-      <div onclick="var sheet=document.getElementById('stylesheet').getAttribute('href');
+      <div
+        onclick="var sheet=document.getElementById('stylesheet').getAttribute('href');
                     document.cookie = (sheet == 'styles/light.css') ? 'theme=dark' : 'theme=light';
-                    document.getElementById('stylesheet').setAttribute('href', (sheet == 'styles/light.css') ? 'styles/dark.css' : 'styles/light.css');" id="lights">
-      </div>
+                    document.getElementById('stylesheet').setAttribute('href', (sheet == 'styles/light.css') ? 'styles/dark.css' : 'styles/light.css');"
+        id="lights"
+      ></div>
       <div id="content">
         <div id="title">
           <p id="name">Danila Bredikhin</p>
-          <p id="desc">PhD candidate at <a class="embl" href="https://www.embl.org/" target="_blank">EMBL</a> with <a href="https://twitter.com/oliverstegle" target="_blank" class="twitter">Oliver Stegle</a></p>
+          <p id="desc">
+            PhD at
+            <a class="embl" href="https://www.embl.org/" target="_blank"
+              >EMBL</a
+            >
+          </p>
         </div>
         <div id="announcement">
           <div class="att_card">
-            <div class="att_text">Want to chat? <a href="mailto:danila@hey.com?subject=Happy to chat&body=Hi, I have just seen the message on your website and " target="_blank">Drop me an email.</a></div>
+            <div class="att_text">
+              Want to chat?
+              <a
+                href="mailto:danila@hey.com?subject=Happy to chat&body=Hi, I have just seen the message on your website and "
+                target="_blank"
+                >Drop me an email.</a
+              >
+            </div>
           </div>
         </div>
         <div id="occupation">
           <div class="when">Currently</div>
-          <div class="what">PhD candidate in <a class="embl" href="https://www.embl.org/" target="_blank">EMBL</a> | <a href="https://www.embl.org/groups/stegle/" target="_blank">Stegle group</a></div>
-	  <div class="what">steering council and core developer | <a href="https://scverse.org/" target="_blank">scverse</a></div>
+          <div class="what">
+            Steering council and core developer |
+            <a href="https://scverse.org/" target="_blank">scverse</a>
+          </div>
           <div class="when">Previously</div>
-          <div class="what">Visiting scientist in <a class="sanger" href="https://www.sanger.ac.uk/group/stegle-and-theis-group/" target="_blank">Sanger Institute</a></div>
-          <div class="what">Visiting researcher in <a class="dkfz" href="https://www.dkfz.de/en/bioinformatik-genomik-systemgenetik/" target="_blank">DKFZ</a></div>
-          <div class="what">Research trainee at <a class="chambray" href="http://iitp.ru/en/about" target="_blank">IITP</a> | <a href="http://www.rtcb.iitp.ru/mg_e.htm" target="_blank">Gelfand group</a></div>
-          <div class="what"><a class="msu" href="https://www.msu.ru/en/" target="_blank">MSU</a> alumnus | <a class="fbb" href="http://en.fbb.msu.ru/" target="_blank">FBB</a></div>
+          <div class="what">
+            PhD at
+            <a class="embl" href="https://www.embl.org/" target="_blank"
+              >EMBL</a
+            >
+            |
+            <a href="https://www.embl.org/groups/stegle/" target="_blank"
+              >Stegle group</a
+            >
+          </div>
+          <div class="what">
+            Visiting scientist at
+            <a
+              class="sanger"
+              href="https://www.sanger.ac.uk/group/stegle-and-theis-group/"
+              target="_blank"
+              >Sanger Institute</a
+            >
+            and
+            <a
+              class="dkfz"
+              href="https://www.dkfz.de/en/bioinformatik-genomik-systemgenetik/"
+              target="_blank"
+              >DKFZ</a
+            >
+          </div>
+          <div class="what">
+            Research trainee at
+            <a class="chambray" href="http://iitp.ru/en/about" target="_blank"
+              >IITP</a
+            >
+            |
+            <a href="http://www.rtcb.iitp.ru/mg_e.htm" target="_blank"
+              >Gelfand group</a
+            >
+          </div>
+          <div class="what">
+            <a class="msu" href="https://www.msu.ru/en/" target="_blank">MSU</a>
+            alumnus |
+            <a class="fbb" href="http://fbb.msu.ru/" target="_blank">FBB</a>
+          </div>
         </div>
         <div id="contributions">
           <div id="contributions_header">
-            <div id="contributions_title">Projects</div>
+            <div id="contributions_title">Selected projects</div>
             <div id="contributions_profile">
-              <a href="https://github.com/gtca" target="_blank" class="github">GitHub</a>
+              <a href="https://github.com/gtca" target="_blank" class="github"
+                >GitHub</a
+              >
             </div>
           </div>
           <div id="contributions_list">
-            <div class="contrib_card">
-		    <div class="contrib_title"><a target="_blank" href="https://muon.scverse.org/">muon&nbsp;<img src="styles/north_east.svg" class="external"/></a></div>
-              <div class="contrib_info">// multimodal omics framework</div>
+            <div class="contrib_card contrib_card_wide">
+              <a href="https://scverse.org/" target="_blank"
+                ><span class="clickable"></span
+              ></a>
+              <div class="contrib_title"><span>scverse</span></div>
+              <div class="contrib_info">open-source consortium</div>
             </div>
             <div class="contrib_card">
-              <div class="contrib_title"><a target="_blank" href="https://biofam.github.io/MOFA2/">MOFA&nbsp;<img src="styles/north_east.svg" class="external"/></a></div>
-              <div class="contrib_info">// multi-omics factor analysis</div>
+              <a href="https://muon.scverse.org/" target="_blank"
+                ><span class="clickable"></span
+              ></a>
+              <div class="contrib_title"><span>muon</span></div>
+              <div class="contrib_info">multimodal omics framework</div>
+            </div>
+            <div class="contrib_card">
+              <a href="https://biofam.github.io/MOFA2/" target="_blank"
+                ><span class="clickable"></span
+              ></a>
+              <div class="contrib_title"><span>MOFA</span></div>
+              <div class="contrib_info">multi-omics factor analysis</div>
             </div>
           </div>
         </div>
         <div id="publications">
           <div id="publications_header">
-              <div id="publications_title">Publications</div>
-              <div id="publications_profile">
-                <a href="https://orcid.org/0000-0001-8089-6983" target="_blank" class="orcid">ORCID</a>
-                <a href="https://scholar.google.com/citations?user=a3d4D-YAAAAJ" target="_blank" class="scolar">Google Scholar</a>
-              </div>
+            <div id="publications_title">Selected publications</div>
+            <div id="publications_profile">
+              <a
+                href="https://orcid.org/0000-0001-8089-6983"
+                target="_blank"
+                class="orcid"
+                >ORCID</a
+              >
+              <a
+                href="https://scholar.google.com/citations?user=a3d4D-YAAAAJ"
+                target="_blank"
+                class="scolar"
+                >Google Scholar</a
+              >
+            </div>
           </div>
           <div id="publications_list">
             <div class="pub_card">
-                <a href="/muon" onclick="modalOpen(event, '/muon')"><span class="clickable"></span></a>
-                <div class="pub_title">Multimodal omics analysis framework</div>
-                <div class="pub_alias"> <a href="muon/">muon</a></div>
-                <div class="pub_info">Genome Biology, February 2022</div>
+              <a href="/scverse" onclick="modalOpen(event, '/scverse')"
+                ><span class="clickable"></span
+              ></a>
+              <div class="pub_title">The scverse project</div>
+              <div class="pub_alias"><a href="scverse/">scverse</a></div>
+              <div class="pub_info">Nature Biotechnology, April 2023</div>
             </div>
             <div class="pub_card">
-                <a href="/mofa2" onclick="modalOpen(event, '/mofa2')"><span class="clickable"></span></a>
-                <div class="pub_title">Multimodal single-cell data integration framework</div>
-                <div class="pub_alias"> <a href="mofa2/">MOFA+</a></div>
-                <div class="pub_info">Genome Biology, May 2020</div>
+              <a href="/muon" onclick="modalOpen(event, '/muon')"
+                ><span class="clickable"></span
+              ></a>
+              <div class="pub_title">Multimodal omics analysis framework</div>
+              <div class="pub_alias"><a href="muon/">muon</a></div>
+              <div class="pub_info">Genome Biology, February 2022</div>
             </div>
             <div class="pub_card">
-                <a href="/zga" onclick="modalOpen(event, '/zga')"><span class="clickable"></span></a>
-                <div class="pub_title">CRISPRa screen for zygotic genome activation</div>
-                <div class="pub_alias"> <a href="zga/">Zygotic genome activation</a></div>
-                <div class="pub_info">Cell Systems, July 2020</div>
+              <a href="/mofa2" onclick="modalOpen(event, '/mofa2')"
+                ><span class="clickable"></span
+              ></a>
+              <div class="pub_title">
+                Multimodal single-cell data integration framework
+              </div>
+              <div class="pub_alias"><a href="mofa2/">MOFA+</a></div>
+              <div class="pub_info">Genome Biology, May 2020</div>
+            </div>
+            <div class="pub_card">
+              <a href="/zga" onclick="modalOpen(event, '/zga')"
+                ><span class="clickable"></span
+              ></a>
+              <div class="pub_title">
+                CRISPRa screen for zygotic genome activation
+              </div>
+              <div class="pub_alias">
+                <a href="zga/">Zygotic genome activation</a>
+              </div>
+              <div class="pub_info">Cell Systems, July 2020</div>
             </div>
           </div>
         </div>
         <div id="footer">
           <div id="communication">
-            <span class="github"><a href="https://github.com/gtca" target="_blank">GitHub</a> |</span>
-            <span class="twitter"><a href="http://twitter.com/gtcaa" target="_blank">Twitter</a> |</span>
-            <span class="email"><a href="mailto:danila@hey.com" target="_blank">Email</a></span>
+            <span class="github"
+              ><a href="https://github.com/gtca" target="_blank">GitHub</a>
+              |</span
+            >
+            <span class="twitter"
+              ><a href="http://twitter.com/gtcaa" target="_blank">Twitter</a>
+              |</span
+            >
+            <span class="email"
+              ><a href="mailto:danila@hey.com" target="_blank">Email</a></span
+            >
           </div>
+          <!--
           <div class="middot">&middot;</div>
           <div id="locations">
-            <a href="https://www.google.com/maps/place/Heidelberg/" target="_blank" class="hd">Heidelberg</a> |
+	    <a href="https://www.google.com/maps/place/Heidelberg/" target="_blank" class="hd">Heidelberg</a> |
             <a href="https://www.google.com/maps/place/Cambridge/" target="_blank" class="cam">Cambridge</a> |
             <a href="https://www.google.com/maps/place/Moscow/" target="_blank" class="msk">Moscow</a>
           </div>
+	  -->
         </div>
       </div>
     </div>
-    <div id="modaloverlay">
-    </div>
+    <div id="modaloverlay"></div>
   </body>
 </html>
-
-
