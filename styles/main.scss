@@ -1,7 +1,8 @@
-@import 'colours';
-@import 'modal';
+@import "colours";
+@import "modal";
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   background-color: $white1;
@@ -65,388 +66,453 @@ html, body {
     // background-color: #eeeeee;
 
     @media only screen and (max-width: 1024px) {
-      width: 800px;
+      width: 780px;
     }
 
     @media only screen and (max-width: 800px) {
-      width: 400px;
+      width: 500px;
     }
 
     #title {
-        padding: 30px 0;
-        #name {
-          font-size: 20pt;
-          font-family: 'Nunito', sans-serif;
-          margin: 0;
-          @media only screen and (max-device-width: 1024px) {
-            font-size: 4rem;
-          }
-       }
-       #desc {
-         display: none;
-         margin: 0;
-         font-size: 12pt;
-         font-family: 'Quattrocento Sans', sans-serif;
-       }
-       #motivation {
-       }
-     }
-     #occupation {
-       font-family: 'Quattrocento Sans', sans-serif;
+      padding: 30px 0;
+      #name {
+        font-size: 20pt;
+        font-family: "Nunito", sans-serif;
+        margin: 0;
         @media only screen and (max-device-width: 1024px) {
-          margin-top: 2rem;
-          font-size: 2rem;
+          font-size: 4rem;
         }
-       .when {
-         text-transform: uppercase;
-         color: $grey1_5;
-         font-weight: 900;
-         font-size: 10pt;
-         padding: 0;
-         margin: 0;
-         margin-top: 20px;
-         font-family: 'Nunito', sans-serif;
-         &:first-child {
+      }
+      #desc {
+        display: none;
+        margin: 0;
+        font-size: 12pt;
+        font-family: "Quattrocento Sans", sans-serif;
+      }
+      #motivation {
+      }
+    }
+    #occupation {
+      font-family: "Quattrocento Sans", sans-serif;
+      @media only screen and (max-device-width: 1024px) {
+        margin-top: 2rem;
+        font-size: 2rem;
+      }
+      .when {
+        text-transform: uppercase;
+        color: $grey1_5;
+        font-weight: 900;
+        font-size: 10pt;
+        padding: 0;
+        margin: 0;
+        margin-top: 20px;
+        font-family: "Nunito", sans-serif;
+        &:first-child {
           margin-top: 0;
-         }
-         @media only screen and (max-device-width: 1024px) {
-           & {
-            font-size: 3rem;
+        }
+        @media only screen and (max-device-width: 1024px) {
+          & {
+            font-size: 2rem;
             margin-top: 3rem;
-           }
           }
-       }
-       .what {
-         margin: 0;
-         margin-bottom: 4px;
-         &:last-child {
+        }
+      }
+      .what {
+        margin: 0;
+        margin-bottom: 4px;
+        &:last-child {
           margin-bottom: 0;
-         }
-         @media only screen and (max-device-width: 1024px) {
+        }
+        @media only screen and (max-device-width: 1024px) {
           margin-bottom: 1rem;
-         }
-       }
-       a:hover, a:visited, a:link, a:active {
-         text-decoration: none;
-         color: inherit;
-       }
-       a:hover {
-         color: $grey2;
-       }
-       .embl:hover {
-         color: $green;
-       }
-       .sanger:hover {
+        }
+      }
+      a:hover,
+      a:visited,
+      a:link,
+      a:active {
+        text-decoration: none;
+        color: inherit;
+      }
+      a:hover {
+        color: $grey2;
+      }
+      .embl:hover {
+        color: $green;
+      }
+      .sanger:hover {
         color: $sanger_blue;
-       }
-       .dkfz:hover {
+      }
+      .dkfz:hover {
         color: $dkfz_blue;
-       }
-       .chambray:hover {
-         color: $chambray;
-       }
-       .fbb:hover {
-         color: $turquoise;
-       }
-       .msu:hover {
-         color: $msu_blue;
-       }
-     }
-     #contributions {
-       margin: 40px 0 20px 0;
-       #contributions_header {
-            display: flex;
-            flex-direction: row;
-            justify-content: left;
-           #contributions_title {
-             text-transform: uppercase;
-             color: $grey1_5;
-             font-weight: 900;
-             font-size: 10pt;
-             padding: 0;
-             margin: 0;
-             padding-right: 10px;
-             font-family: 'Nunito', sans-serif;
-           }
-           #contributions_profile {
-             display: flex;
-             flex-direction: row;
-             color: $grey1_c;
-             margin-left: 5px;
-             a {
-              padding: 0 5px;
-              // font-size: 8pt;
-              align-self: flex-end;
-              transition: all 250ms;
-             }
-             a:hover, a:visited, a:link, a:active {
-               text-decoration: none;
-               color: inherit;
-             }
-             a:hover {
+      }
+      .chambray:hover {
+        color: $chambray;
+      }
+      .fbb:hover {
+        color: $turquoise;
+      }
+      .msu:hover {
+        color: $msu_blue;
+      }
+    }
+    #contributions {
+      margin: 40px 0 20px 0;
+      #contributions_header {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        margin-bottom: 0.5rem;
+
+        #contributions_title {
+          text-transform: uppercase;
+          color: $grey1_5;
+          font-weight: 900;
+          font-size: 10pt;
+          padding: 0;
+          margin: 0;
+          padding-right: 10px;
+          font-family: "Nunito", sans-serif;
+        }
+        #contributions_profile {
+          display: flex;
+          flex-direction: row;
+          color: $grey1_c;
+          margin-left: 5px;
+          a {
+            padding: 0 5px;
+            // font-size: 8pt;
+            align-self: flex-end;
+            transition: all 250ms;
+          }
+          a:hover,
+          a:visited,
+          a:link,
+          a:active {
+            text-decoration: none;
+            color: inherit;
+          }
+          a:hover {
+            color: $grey3;
+          }
+          .github:hover {
+            color: black;
+          }
+        }
+
+        @media screen and (max-device-width: 1024px) {
+          margin-top: 4rem;
+          flex-direction: column;
+          #contributions_title,
+          #contributions_profile {
+            font-size: 2rem;
+            margin: 0;
+          }
+          #contributions_profile a {
+            padding: 0;
+          }
+        }
+      }
+      #contributions_list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+        column-gap: 0.3rem;
+        width: 80%;
+        margin-left: -0.8rem;
+
+        .contrib_card {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          flex: 0 0 calc(25% - 1.3rem);
+          height: 7rem;
+          position: relative;
+          border-radius: 10px;
+          padding: 0.8rem 0.8rem;
+          border: 1px solid transparent;
+          background: $white3;
+          transition: all 150ms ease-in-out;
+
+          &.contrib_card_wide {
+            flex: 0 0 75%;
+          }
+
+          .clickable {
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            position: absolute;
+            z-index: 2;
+          }
+
+          .contrib_title {
+            position: relative;
+            flex: 1;
+            span {
+              font-family: "Nunito", sans-serif;
+              font-size: 1.4rem;
               color: $grey3;
-             }
-             .github:hover {
+              font-weight: 900;
+              transition: all 250ms;
+            }
+          }
+
+          .contrib_info {
+            color: $grey1_c;
+            font-size: 1.1rem;
+            align-self: start;
+          }
+
+          &:hover {
+            background: $grey1;
+            .contrib_title > span {
               color: black;
-             }
-           }
+            }
+          }
+        }
 
-           @media screen and (max-device-width: 1024px) {
-             margin-top: 4rem;
-             flex-direction: column;
-             #contributions_title, #contributions_profile {
-              font-size: 3rem;
-              margin: 0;
-             }
-             #contributions_profile a {
-              padding: 0;
-             }
-           }
-       }
-       #contributions_list {
-         .contrib_card {
-           display: flex;
-           flex-direction: row;
-           flex-wrap: wrap;
-           width: 100%;
-           position: relative;
-           border-radius: 5px;
-           padding: 5px 0;
+        @media screen and (max-device-width: 1024px) {
+          width: 100%;
+          .contrib_card {
+            margin-bottom: 1rem;
+            flex-direction: column;
 
-           .contrib_title {
-              position: relative;
-              display: flex;
-              flex-direction: column;
-              flex: 1;
-              a {
-                width: fit-content;
-                // border-bottom: 1px solid $grey1;
-                text-decoration: none;
-                color: $grey3;
-              }
-              a:hover {
-                // border-bottom: 1px solid $grey3;
-                color: black; 
-              }
-           }
-           
-           .contrib_info {
-              margin-left: 5px;
-              color: $grey1_c;
-              display: flex;
-              flex-direction: column;
-              flex: 9;
-           }
+            height: 6rem;
+            flex: 1 0 100%;
+            &.contrib_card_wide {
+              flex: 1 0 100%;
+            }
 
-           @media screen and (max-device-width: 1024px) {
-             margin-bottom: 1rem;
-             flex-direction: column;
-             .contrib_title, .contrib_info {
-              font-size: 3rem;
-             }
-             .contrib_info {
+            .contrib_info {
               display: block;
-             }
-             .contrib_title img {
-                display: none;
-              }
-           }
-         }
-       }
-     }
-     #publications {
-       #publications_header {
-            display: flex;
-            flex-direction: row;
-            justify-content: left;
-           #publications_title {
-             text-transform: uppercase;
-             color: $grey1_5;
-             font-weight: 900;
-             font-size: 10pt;
-             padding: 0;
-             margin: 0;
-             padding-right: 10px;
-             font-family: 'Nunito', sans-serif;
-           }
-           #publications_profile {
-             display: flex;
-             flex-direction: row;
-             color: $grey1_c;
-             margin-left: 5px;
-             a {
-              padding: 0 5px;
-              // font-size: 8pt;
-              align-self: flex-end;
-              transition: all 250ms;
-             }
-             a:hover, a:visited, a:link, a:active {
-               text-decoration: none;
-               color: inherit;
-             }
-             a:hover {
-              color: $grey3;
-             }
-             .orcid:hover {
-              color: $orcid_green;
-             }
-             .scolar:hover {
-              color: $scholar_blue;
-             }
-           }
-           @media screen and (max-device-width: 1024px) {
-             margin-top: 4rem;
-             flex-direction: column;
-             #publications_title, #publications_profile {
-              font-size: 3rem;
-              margin: 0;
-             }
-             #publications_profile {
-                a {
-                  padding-left: 2rem;
-                }
-                a:first-child {
-                  padding: 0;
-                }
-             }
-           }
-       }
-       #publications_list {
-         .pub_card {
-           position: relative;
-           max-width: 500px;
-           z-index: 1;
-           @media screen and (max-device-width: 1024px) {
+            }
+            .contrib_title img {
+              display: none;
+            }
+
+            .contrib_title > span {
+              font-size: 2.4rem;
+            }
+            .contrib_info {
+              font-size: 1.8rem;
+            }
+          }
+        }
+
+        @media screen and (max-width: 800px) {
+          width: 100%;
+          .contrib_card {
+            height: 6rem;
+            flex: 1 0 100%;
+            &.contrib_card_wide {
+              flex: 1 0 100%;
+            }
+          }
+        }
+      }
+    }
+    #publications {
+      #publications_header {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        #publications_title {
+          text-transform: uppercase;
+          color: $grey1_5;
+          font-weight: 900;
+          font-size: 10pt;
+          padding: 0;
+          margin: 0;
+          padding-right: 10px;
+          font-family: "Nunito", sans-serif;
+        }
+        #publications_profile {
+          display: flex;
+          flex-direction: row;
+          color: $grey1_c;
+          margin-left: 5px;
+          a {
+            padding: 0 5px;
+            // font-size: 8pt;
+            align-self: flex-end;
+            transition: all 250ms;
+          }
+          a:hover,
+          a:visited,
+          a:link,
+          a:active {
+            text-decoration: none;
+            color: inherit;
+          }
+          a:hover {
+            color: $grey3;
+          }
+          .orcid:hover {
+            color: $orcid_green;
+          }
+          .scolar:hover {
+            color: $scholar_blue;
+          }
+        }
+        @media screen and (max-device-width: 1024px) {
+          margin-top: 4rem;
+          flex-direction: column;
+          #publications_title,
+          #publications_profile {
+            font-size: 2rem;
+            margin: 0;
+          }
+          #publications_profile {
+            a {
+              padding-left: 2rem;
+            }
+            a:first-child {
+              padding: 0;
+            }
+          }
+        }
+      }
+      #publications_list {
+        .pub_card {
+          position: relative;
+          max-width: 500px;
+          z-index: 1;
+          @media screen and (max-width: 1024px) {
+            margin-left: -0.05rem !important;
+          }
+          @media screen and (max-device-width: 1024px) {
             max-width: 100%;
             padding-top: 2rem !important;
             padding-bottom: 2rem !important;
-           }
+            font-size: 1.8rem;
+          }
 
-           .clickable {
-             height: 100%;
-             width: 100%;
-             left: 0;
-             top: 0;
-             position: absolute;
-             z-index: 2;
-           }
-           .pub_links {
-             position: relative;
-             text-decoration: none;
-             color: inherit;
-             z-index: 3;
-           }
-           .pub_title {
+          .clickable {
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            position: absolute;
+            z-index: 2;
+          }
+          .pub_links {
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+            z-index: 3;
+          }
+          .pub_title {
+          }
+          .pub_info {
+            opacity: 0.5;
+          }
 
-           }
-           .pub_info {
-             opacity: .5;
-           }
-             
-           .pub_alias {
-             display: none;
-           }
-         }
+          .pub_alias {
+            display: none;
+          }
+        }
 
-         @media screen and (max-device-width: 1024px) {
+        @media screen and (max-device-width: 1024px) {
+          flex-direction: column;
 
-          .pubication_list {
-
+          .pub_card {
+            display: flex;
             flex-direction: column;
-            
-             .pub_card {
-               display: flex;
-               flex-direction: column;
-               flex-basis: 30%;
+            flex-basis: 30%;
 
-               flex-shrink: 0;
+            flex-shrink: 0;
 
-               &:first-child {
-                 margin-top: 0;
-               }
-               &:last-child {
-                 margin-bottom: 0;
-               }
+            &:first-child {
+              margin-top: 0;
+            }
+            &:last-child {
+              margin-bottom: 0;
+            }
 
-               .pub_title {
-                 flex-grow: 1;
-               }
-               .pub_info {
-                 font-size: 12pt;
-               }
+            .pub_title {
+              flex-grow: 1;
+            }
+            .pub_info {
+              font-size: 12pt;
+            }
 
-
-               &:active {
-                 box-shadow: 0 3px 5px rgba(0,0,0,0.30);
-               }
-             }
-             &::-webkit-scrollbar {
-                width: 0px;
-                background: transparent;
-             }
-           }
-        
-         }
-       }
-     }
-     #footer {
-       display: flex;
-       flex-direction: row;
-       margin: 20px 0;
-       @media screen and (max-device-width: 1024px) {
+            &:active {
+              box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+            }
+          }
+          &::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+          }
+        }
+      }
+    }
+    #footer {
+      display: flex;
+      flex-direction: row;
+      margin: 20px 0;
+      @media screen and (max-device-width: 1024px) {
         font-size: 2rem;
-       }
+      }
 
-       #communication {
-         color: $grey2;
-         a {
-           color: $grey2;
-         }
-         a:hover, a:visited, a:link, a:active {
-           text-decoration: none;
-           color: inherit;
-         }
-         a:hover {
-           color: $grey3;
-         }
-         .twitter > a:hover {
+      #communication {
+        color: $grey2;
+        a {
+          color: $grey2;
+        }
+        a:hover,
+        a:visited,
+        a:link,
+        a:active {
+          text-decoration: none;
+          color: inherit;
+        }
+        a:hover {
+          color: $grey3;
+        }
+        .twitter > a:hover {
           color: $twitter_blue;
-         }
-         .github > a:hover {
-           color: $github_violet;
-         }
-       }
-       .middot {
+        }
+        .github > a:hover {
+          color: $github_violet;
+        }
+      }
+      .middot {
         margin: 0 5px;
         color: $grey2;
-       }
-       #locations {
-         color: $grey2;
-         a:hover, a:visited, a:link, a:active {
-           text-decoration: none;
-           color: inherit;
-         }
-         a {
-           color: $grey3;
-         }
-         .msk:hover {
-           color: $azure;
-         }
-         .cam:hover {
-           color: $cam_blue;
-         }
-         .hd:hover {
-           color: $hd_pink;
-         }
-         .hidden {
-            margin: 0;
-            padding: 0;
-            color: white;
-         }
-       }
-     }
+      }
+      #locations {
+        color: $grey2;
+        a:hover,
+        a:visited,
+        a:link,
+        a:active {
+          text-decoration: none;
+          color: inherit;
+        }
+        a {
+          color: $grey3;
+        }
+        .msk:hover {
+          color: $azure;
+        }
+        .cam:hover {
+          color: $cam_blue;
+        }
+        .hd:hover {
+          color: $hd_pink;
+        }
+        .hidden {
+          margin: 0;
+          padding: 0;
+          color: white;
+        }
+      }
+    }
   }
-
 
   .external {
     height: 12px;

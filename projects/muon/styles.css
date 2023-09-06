@@ -1,145 +1,175 @@
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   margin: 0;
 }
-html #wrapper, body #wrapper {
+html #wrapper,
+body #wrapper {
   width: 100%;
   height: 100%;
 }
-html #wrapper #content, body #wrapper #content {
+html #wrapper #content,
+body #wrapper #content {
   display: flex;
   flex-direction: row;
   align-self: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-  background-image: url(cover.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: left top;
+  background-color: #f5f4f0;
   transition: all 1s ease-in-out;
 }
-@media only screen and (max-width: 1000px) {
-  html #wrapper #content, body #wrapper #content {
-    background-image: none;
-  }
-}
-@media only screen and (max-aspect-ratio: 7/8) {
-  html #wrapper #content, body #wrapper #content {
-    background-image: none;
-  }
-}
-html #wrapper #content #left, body #wrapper #content #left {
+html #wrapper #content #left,
+body #wrapper #content #left {
   width: 50%;
   height: 100%;
 }
 @media only screen and (max-width: 1000px) {
-  html #wrapper #content #left, body #wrapper #content #left {
+  html #wrapper #content #left,
+body #wrapper #content #left {
     width: 10%;
   }
 }
 @media only screen and (max-aspect-ratio: 7/8) {
-  html #wrapper #content #left, body #wrapper #content #left {
+  html #wrapper #content #left,
+body #wrapper #content #left {
     width: 10%;
   }
 }
-html #wrapper #content #right, body #wrapper #content #right {
+html #wrapper #content #right,
+body #wrapper #content #right {
   display: flex;
   width: 50%;
   height: 100%;
 }
 @media only screen and (max-width: 1000px) {
-  html #wrapper #content #right, body #wrapper #content #right {
+  html #wrapper #content #right,
+body #wrapper #content #right {
     width: 90%;
   }
 }
 @media only screen and (max-aspect-ratio: 7/8) {
-  html #wrapper #content #right, body #wrapper #content #right {
+  html #wrapper #content #right,
+body #wrapper #content #right {
     width: 90%;
   }
 }
-html #wrapper #content #right #right_content, body #wrapper #content #right #right_content {
+html #wrapper #content #right #right_content,
+body #wrapper #content #right #right_content {
   align-self: center;
   padding: 10px 50px 10px 10px;
   margin-left: -30px;
 }
-html #wrapper #content #right #right_content #summary_title, body #wrapper #content #right #right_content #summary_title {
+html #wrapper #content #right #right_content #summary_title,
+body #wrapper #content #right #right_content #summary_title {
   font-size: 42pt;
   font-family: Roboto, sans-serif, monospace;
   font-weight: 800;
   color: #777777;
   padding: 0;
 }
-html #wrapper #content #right #right_content #summary_subtitle, body #wrapper #content #right #right_content #summary_subtitle {
+html #wrapper #content #right #right_content #summary_subtitle,
+body #wrapper #content #right #right_content #summary_subtitle {
   font-size: 18pt;
   font-family: serif;
   font-weight: 100;
   color: #777777;
   padding: 0;
 }
-html #wrapper #content #right #right_content #summary_subtitle .contributors, body #wrapper #content #right #right_content #summary_subtitle .contributors {
+html #wrapper #content #right #right_content #summary_subtitle .contributors,
+body #wrapper #content #right #right_content #summary_subtitle .contributors {
   font-size: 14pt;
   text-decoration: none;
   pointer-events: auto;
   margin-top: 1em;
   color: darkgrey;
 }
-html #wrapper #content #right #right_content #summary_subtitle .contributors a:hover, html #wrapper #content #right #right_content #summary_subtitle .contributors a:visited, html #wrapper #content #right #right_content #summary_subtitle .contributors a:link, html #wrapper #content #right #right_content #summary_subtitle .contributors a:active, body #wrapper #content #right #right_content #summary_subtitle .contributors a:hover, body #wrapper #content #right #right_content #summary_subtitle .contributors a:visited, body #wrapper #content #right #right_content #summary_subtitle .contributors a:link, body #wrapper #content #right #right_content #summary_subtitle .contributors a:active {
+html #wrapper #content #right #right_content #summary_subtitle .contributors a:hover,
+html #wrapper #content #right #right_content #summary_subtitle .contributors a:visited,
+html #wrapper #content #right #right_content #summary_subtitle .contributors a:link,
+html #wrapper #content #right #right_content #summary_subtitle .contributors a:active,
+body #wrapper #content #right #right_content #summary_subtitle .contributors a:hover,
+body #wrapper #content #right #right_content #summary_subtitle .contributors a:visited,
+body #wrapper #content #right #right_content #summary_subtitle .contributors a:link,
+body #wrapper #content #right #right_content #summary_subtitle .contributors a:active {
   text-decoration: none;
   color: grey;
 }
-html #wrapper #content #right #right_content #summary_subtitle .contributors a, body #wrapper #content #right #right_content #summary_subtitle .contributors a {
+html #wrapper #content #right #right_content #summary_subtitle .contributors a,
+body #wrapper #content #right #right_content #summary_subtitle .contributors a {
   color: grey;
 }
-html #wrapper #content #right #right_content #summary_subtitle .contributors a:hover, body #wrapper #content #right #right_content #summary_subtitle .contributors a:hover {
+html #wrapper #content #right #right_content #summary_subtitle .contributors a:hover,
+body #wrapper #content #right #right_content #summary_subtitle .contributors a:hover {
   color: black;
 }
-html #wrapper #content #right #right_content #summary_subtitle .contributors .twt:visited, body #wrapper #content #right #right_content #summary_subtitle .contributors .twt:visited {
+html #wrapper #content #right #right_content #summary_subtitle .contributors .twt:visited,
+body #wrapper #content #right #right_content #summary_subtitle .contributors .twt:visited {
   color: darkgrey;
 }
-html #wrapper #content #right #right_content #summary_subtitle .contributors .twt:hover, body #wrapper #content #right #right_content #summary_subtitle .contributors .twt:hover {
-  color: #38A1F3;
+html #wrapper #content #right #right_content #summary_subtitle .contributors .twt:hover,
+body #wrapper #content #right #right_content #summary_subtitle .contributors .twt:hover {
+  color: #38a1f3;
 }
-html #wrapper #content #right #right_content #summary_text, body #wrapper #content #right #right_content #summary_text {
+html #wrapper #content #right #right_content #summary_text,
+body #wrapper #content #right #right_content #summary_text {
   font-size: 14pt;
   padding: 30px 0;
   font-family: serif;
   color: #333333;
   max-width: 700px;
 }
-html #wrapper #content #right #right_content a, body #wrapper #content #right #right_content a {
+html #wrapper #content #right #right_content a,
+body #wrapper #content #right #right_content a {
   text-decoration: none;
   color: grey;
 }
-html #wrapper #content #right #right_content a:visited, html #wrapper #content #right #right_content a:link, html #wrapper #content #right #right_content a:active, body #wrapper #content #right #right_content a:visited, body #wrapper #content #right #right_content a:link, body #wrapper #content #right #right_content a:active {
+html #wrapper #content #right #right_content a:visited, html #wrapper #content #right #right_content a:link, html #wrapper #content #right #right_content a:active,
+body #wrapper #content #right #right_content a:visited,
+body #wrapper #content #right #right_content a:link,
+body #wrapper #content #right #right_content a:active {
   color: grey;
 }
-html #wrapper #content #right #right_content a:hover, body #wrapper #content #right #right_content a:hover {
+html #wrapper #content #right #right_content a:hover,
+body #wrapper #content #right #right_content a:hover {
   color: black;
 }
-html #wrapper #content #right #right_content .pub_links, body #wrapper #content #right #right_content .pub_links {
+html #wrapper #content #right #right_content .pub_links,
+body #wrapper #content #right #right_content .pub_links {
   position: relative;
   text-decoration: none;
   color: grey;
 }
-html #wrapper #content #right #right_content .pub_links a:hover, html #wrapper #content #right #right_content .pub_links a:visited, html #wrapper #content #right #right_content .pub_links a:link, html #wrapper #content #right #right_content .pub_links a:active, body #wrapper #content #right #right_content .pub_links a:hover, body #wrapper #content #right #right_content .pub_links a:visited, body #wrapper #content #right #right_content .pub_links a:link, body #wrapper #content #right #right_content .pub_links a:active {
+html #wrapper #content #right #right_content .pub_links a:hover,
+html #wrapper #content #right #right_content .pub_links a:visited,
+html #wrapper #content #right #right_content .pub_links a:link,
+html #wrapper #content #right #right_content .pub_links a:active,
+body #wrapper #content #right #right_content .pub_links a:hover,
+body #wrapper #content #right #right_content .pub_links a:visited,
+body #wrapper #content #right #right_content .pub_links a:link,
+body #wrapper #content #right #right_content .pub_links a:active {
   color: grey;
 }
-html #wrapper #content #right #right_content .pub_links a, body #wrapper #content #right #right_content .pub_links a {
+html #wrapper #content #right #right_content .pub_links a,
+body #wrapper #content #right #right_content .pub_links a {
   color: grey;
 }
-html #wrapper #content #right #right_content .pub_links a:hover, body #wrapper #content #right #right_content .pub_links a:hover {
+html #wrapper #content #right #right_content .pub_links a:hover,
+body #wrapper #content #right #right_content .pub_links a:hover {
   color: black;
 }
-html #wrapper #content #right #right_content .pub_links .ppr:hover, body #wrapper #content #right #right_content .pub_links .ppr:hover {
+html #wrapper #content #right #right_content .pub_links .ppr:hover,
+body #wrapper #content #right #right_content .pub_links .ppr:hover {
   color: red;
 }
-html #wrapper #content #right #right_content .pub_links .twt:hover, body #wrapper #content #right #right_content .pub_links .twt:hover {
-  color: #38A1F3;
+html #wrapper #content #right #right_content .pub_links .twt:hover,
+body #wrapper #content #right #right_content .pub_links .twt:hover {
+  color: #38a1f3;
 }
-html #wrapper #content #right #right_content .pub_links .bioc:hover, body #wrapper #content #right #right_content .pub_links .bioc:hover {
-  color: #73B93D;
+html #wrapper #content #right #right_content .pub_links .bioc:hover,
+body #wrapper #content #right #right_content .pub_links .bioc:hover {
+  color: #73b93d;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   transition: background-color 250ms;
   overflow: hidden;
   overflow-y: scroll;
@@ -36,11 +37,12 @@ html, body {
 }
 #wrapper #content #announcement .att_card {
   position: relative;
+  width: 20rem;
   max-width: 500px;
   z-index: 1;
   border: 0.1rem solid #F88379CC;
   border-radius: 0.5em;
-  padding: 15px 10px;
+  padding: 20px 10px;
   margin: 10px 0 20px 0;
   color: #F88379CC;
   transition: box-shadow 250ms, background-color 250ms;
@@ -57,10 +59,12 @@ html, body {
 }
 @media screen and (max-device-width: 1024px) {
   #wrapper #content #announcement .att_card {
+    width: 100%;
     max-width: 100%;
     padding: 2rem 1rem;
     margin: 0 2rem 2rem 0;
     border-radius: 1rem;
+    font-size: 2rem;
   }
   #wrapper #content #announcement::-webkit-scrollbar {
     width: 0px;
@@ -75,6 +79,16 @@ html, body {
 }
 #wrapper #content #contributions #contributions_header #contributions_profile .github:hover {
   color: #882893;
+}
+#wrapper #content #contributions #contributions_list .contrib_card {
+  background-color: transparent;
+  border: 1px solid #dadada;
+}
+#wrapper #content #contributions #contributions_list .contrib_card:hover {
+  background-color: #dadada;
+}
+#wrapper #content #contributions #contributions_list .contrib_card .contrib_title span {
+  color: white;
 }
 #wrapper #content #contributions #contributions_list .contrib_card .contrib_title a {
   border-bottom: 1px solid #cccccc;
@@ -136,7 +150,10 @@ html, body {
 #wrapper #content #footer #communication a {
   color: #666666;
 }
-#wrapper #content #footer #communication a:hover, #wrapper #content #footer #communication a:visited, #wrapper #content #footer #communication a:link, #wrapper #content #footer #communication a:active {
+#wrapper #content #footer #communication a:hover,
+#wrapper #content #footer #communication a:visited,
+#wrapper #content #footer #communication a:link,
+#wrapper #content #footer #communication a:active {
   text-decoration: none;
   color: inherit;
 }
@@ -153,7 +170,10 @@ html, body {
 #wrapper #content #footer #locations {
   color: #666666;
 }
-#wrapper #content #footer #locations a:hover, #wrapper #content #footer #locations a:visited, #wrapper #content #footer #locations a:link, #wrapper #content #footer #locations a:active {
+#wrapper #content #footer #locations a:hover,
+#wrapper #content #footer #locations a:visited,
+#wrapper #content #footer #locations a:link,
+#wrapper #content #footer #locations a:active {
   text-decoration: none;
   color: inherit;
 }
