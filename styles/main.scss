@@ -7,6 +7,13 @@ body {
   height: 100%;
   background-color: $white1;
   margin: 0;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 #wrapper {
@@ -62,15 +69,18 @@ body {
     flex-direction: column;
     align-self: center;
     justify-content: center;
+    gap: .3rem;
     width: 1000px;
+    padding-bottom: 10rem;
     // background-color: #eeeeee;
 
     @media only screen and (max-width: 1024px) {
-      width: 780px;
+      width: 720px;
     }
 
     @media only screen and (max-width: 800px) {
-      width: 500px;
+      width: auto;
+      padding: 0 2rem 7rem 2rem;
     }
 
     #title {
@@ -83,430 +93,271 @@ body {
           font-size: 4rem;
         }
       }
-      #desc {
-        display: none;
-        margin: 0;
-        font-size: 12pt;
-        font-family: "Quattrocento Sans", sans-serif;
-      }
-      #motivation {
-      }
     }
-    #occupation {
-      font-family: "Quattrocento Sans", sans-serif;
-      @media only screen and (max-device-width: 1024px) {
-        margin-top: 2rem;
-        font-size: 2rem;
-      }
-      .when {
-        text-transform: uppercase;
-        color: $grey1_5;
-        font-weight: 900;
-        font-size: 10pt;
-        padding: 0;
-        margin: 0;
-        margin-top: 20px;
-        font-family: "Nunito", sans-serif;
-        &:first-child {
-          margin-top: 0;
-        }
-        @media only screen and (max-device-width: 1024px) {
-          font-size: 1rem;
-          margin-top: 3rem;
-        }
-      }
-      .what {
-        margin: 0;
-        margin-bottom: 4px;
-        &:last-child {
-          margin-bottom: 0;
-        }
-        @media only screen and (max-device-width: 1024px) {
-          margin-bottom: 1rem;
-        }
-      }
-      a:hover,
-      a:visited,
-      a:link,
-      a:active {
-        text-decoration: none;
-        color: inherit;
-      }
-      a:hover {
-        color: $grey2;
-      }
-      .embl:hover {
-        color: $green;
-      }
-      .sanger:hover {
-        color: $sanger_blue;
-      }
-      .dkfz:hover {
-        color: $dkfz_blue;
-      }
-      .chambray:hover {
-        color: $chambray;
-      }
-      .fbb:hover {
-        color: $turquoise;
-      }
-      .msu:hover {
-        color: $msu_blue;
-      }
-    }
-    #contributions {
-      margin: 40px 0 20px 0;
-      #contributions_header {
-        display: flex;
-        flex-direction: row;
-        justify-content: left;
-        margin-bottom: 0.5rem;
 
-        #contributions_title {
-          text-transform: uppercase;
-          color: $grey1_5;
-          font-weight: 900;
-          font-size: 10pt;
-          padding: 0;
-          margin: 0;
-          padding-right: 10px;
-          font-family: "Nunito", sans-serif;
-        }
-        #contributions_profile {
-          display: flex;
-          flex-direction: row;
-          color: $grey1_c;
-          margin-left: 5px;
-          a {
-            padding: 0 5px;
-            // font-size: 8pt;
-            align-self: flex-end;
-            transition: all 250ms;
-          }
-          a:hover,
-          a:visited,
-          a:link,
-          a:active {
-            text-decoration: none;
-            color: inherit;
-          }
-          a:hover {
-            color: $grey3;
-          }
-          .github:hover {
-            color: black;
-          }
-        }
-
-        @media screen and (max-device-width: 1024px) {
-          margin-top: 4rem;
-          flex-direction: column;
-          #contributions_title,
-          #contributions_profile {
-            font-size: 2rem;
-            margin: 0;
-          }
-          #contributions_profile a {
-            padding: 0;
-          }
-        }
-      }
-      #contributions_list {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0.3rem;
-        column-gap: 0.3rem;
-        width: 80%;
-        margin-left: -0.8rem;
-
-        .contrib_card {
-          display: flex;
-          flex-direction: column;
-          flex-wrap: wrap;
-          flex: 0 0 calc(25% - 1.3rem);
-          height: 7rem;
-          position: relative;
-          border-radius: 10px;
-          padding: 0.8rem 0.8rem;
-          border: 1px solid transparent;
-          background: $white3;
-          transition: all 150ms ease-in-out;
-
-          &.contrib_card_wide {
-            flex: 0 0 75%;
-          }
-
-          .clickable {
-            height: 100%;
-            width: 100%;
-            left: 0;
-            top: 0;
-            position: absolute;
-            z-index: 2;
-          }
-
-          .contrib_title {
-            position: relative;
-            flex: 1;
-            span {
-              font-family: "Nunito", sans-serif;
-              font-size: 1.4rem;
-              color: $grey3;
-              font-weight: 900;
-              transition: all 250ms;
-            }
-          }
-
-          .contrib_info {
-            color: $grey1_c;
-            font-size: 1.1rem;
-            align-self: start;
-          }
-
-          &:hover {
-            background: $grey1;
-            .contrib_title > span {
-              color: black;
-            }
-          }
-        }
-
-        @media screen and (max-device-width: 1024px) {
-          width: 100%;
-          .contrib_card {
-            margin-bottom: 1rem;
-            flex-direction: column;
-
-            height: 6rem;
-            flex: 1 0 100%;
-            &.contrib_card_wide {
-              flex: 1 0 100%;
-            }
-
-            .contrib_info {
-              display: block;
-            }
-            .contrib_title img {
-              display: none;
-            }
-
-            .contrib_title > span {
-              font-size: 2.4rem;
-            }
-            .contrib_info {
-              font-size: 1.8rem;
-            }
-          }
-        }
-
-        @media screen and (max-width: 800px) {
-          width: 100%;
-          .contrib_card {
-            height: 6rem;
-            flex: 1 0 100%;
-            &.contrib_card_wide {
-              flex: 1 0 100%;
-            }
-          }
-        }
-      }
-    }
-    #publications {
-      #publications_header {
-        display: flex;
-        flex-direction: row;
-        justify-content: left;
-        #publications_title {
-          text-transform: uppercase;
-          color: $grey1_5;
-          font-weight: 900;
-          font-size: 10pt;
-          padding: 0;
-          margin: 0;
-          padding-right: 10px;
-          font-family: "Nunito", sans-serif;
-        }
-        #publications_profile {
-          display: flex;
-          flex-direction: row;
-          color: $grey1_c;
-          margin-left: 5px;
-          a {
-            padding: 0 5px;
-            // font-size: 8pt;
-            align-self: flex-end;
-            transition: all 250ms;
-          }
-          a:hover,
-          a:visited,
-          a:link,
-          a:active {
-            text-decoration: none;
-            color: inherit;
-          }
-          a:hover {
-            color: $grey3;
-          }
-          .orcid:hover {
-            color: $orcid_green;
-          }
-          .scolar:hover {
-            color: $scholar_blue;
-          }
-        }
-        @media screen and (max-device-width: 1024px) {
-          margin-top: 4rem;
-          flex-direction: column;
-          #publications_title,
-          #publications_profile {
-            font-size: 2rem;
-            margin: 0;
-          }
-          #publications_profile {
-            a {
-              padding-left: 2rem;
-            }
-            a:first-child {
-              padding: 0;
-            }
-          }
-        }
-      }
-      #publications_list {
-        .pub_card {
-          position: relative;
-          max-width: 500px;
-          z-index: 1;
-          @media screen and (max-width: 1024px) {
-            margin-left: -0.05rem !important;
-          }
-          @media screen and (max-device-width: 1024px) {
-            max-width: 100%;
-            padding-top: 2rem !important;
-            padding-bottom: 2rem !important;
-            font-size: 1.8rem;
-          }
-
-          .clickable {
-            height: 100%;
-            width: 100%;
-            left: 0;
-            top: 0;
-            position: absolute;
-            z-index: 2;
-          }
-          .pub_links {
-            position: relative;
-            text-decoration: none;
-            color: inherit;
-            z-index: 3;
-          }
-          .pub_title {
-          }
-          .pub_info {
-            opacity: 0.5;
-          }
-
-          .pub_alias {
-            display: none;
-          }
-        }
-
-        @media screen and (max-device-width: 1024px) {
-          flex-direction: column;
-
-          .pub_card {
-            display: flex;
-            flex-direction: column;
-            flex-basis: 30%;
-
-            flex-shrink: 0;
-
-            &:first-child {
-              margin-top: 0;
-            }
-            &:last-child {
-              margin-bottom: 0;
-            }
-
-            .pub_title {
-              flex-grow: 1;
-            }
-            .pub_info {
-              font-size: 12pt;
-            }
-
-            &:active {
-              box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-            }
-          }
-          &::-webkit-scrollbar {
-            width: 0px;
-            background: transparent;
-          }
-        }
-      }
-    }
-    #footer {
+    #header {
       display: flex;
       flex-direction: row;
-      margin: 20px 0;
-      @media screen and (max-device-width: 1024px) {
-        font-size: 2rem;
-      }
-
-      #communication {
-        color: $grey2;
-        a {
-          color: $grey2;
-        }
-        a:hover,
-        a:visited,
-        a:link,
-        a:active {
-          text-decoration: none;
-          color: inherit;
-        }
-        a:hover {
-          color: $grey3;
-        }
-        .twitter > a:hover {
-          color: $twitter_blue;
-        }
-        .github > a:hover {
-          color: $github_violet;
+      align-items: flex-start;
+      gap: 1rem;
+      margin: 3rem 0 1rem 0;
+      #userpic {
+        img {
+          content: url("../static/userpic.png");
+          min-width: 2rem;
+          max-width: 5rem;
+          border-radius: 50%;
+          transition: all 200ms ease-in-out;
+          &:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            scale: 1.01;
+          }
+          @media screen and (max-device-width: 1024px) {
+            min-width: 5rem;
+            max-width: 9rem;
+          }
         }
       }
-      .middot {
-        margin: 0 5px;
-        color: $grey2;
-      }
-      #locations {
-        color: $grey2;
-        a:hover,
-        a:visited,
-        a:link,
-        a:active {
-          text-decoration: none;
-          color: inherit;
+      #userinfo {
+        flex-grow: 1;
+        #username {
+          font-size: 20pt;
+          font-family: "Nunito", sans-serif;
+          margin: 0;
+          @media only screen and (max-device-width: 1024px) {
+            font-size: 37pt;
+          }
         }
-        a {
-          color: $grey3;
-        }
-        .msk:hover {
-          color: $azure;
-        }
-        .cam:hover {
-          color: $cam_blue;
-        }
-        .hd:hover {
-          color: $hd_pink;
-        }
-        .hidden {
+        .block {
           margin: 0;
           padding: 0;
-          color: white;
+          .block-content {
+            margin: 0;
+            padding: 0;
+            @media screen and (max-device-width: 1024px) {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    .block {
+      border-radius: .7rem;
+      padding: .7rem;
+      margin-left: -.7rem;
+      transition: all 300ms ease-in-out;
+      h3 {
+        font-family: "Nunito", sans-serif;
+        margin: .2rem auto;
+        transition: all 300ms ease-in-out;
+        font-size: 1rem;
+        font-weight: 300;
+        @media screen and (max-device-width: 1024px) {
+          font-size: 2rem;
+        }
+      }
+      .block-content {
+        font-family: "Nunito", sans-serif;
+        display: flex;
+        flex-direction: column;
+        padding: .5rem 0;
+        .block-line {
+          display: flex;
+          .faint {
+            color: #AAAAAA;
+          }
+          @media screen and (max-device-width: 1024px) {
+            font-size: 1.5rem;
+          }
+        }
+        &.table {
+          .block-line {
+            >span:first-child {
+              flex: 0 0 6rem;
+              @media screen and (max-device-width: 1024px) {
+                flex: 0 0 10rem;
+              }
+            }
+            >span:nth-child(2) {
+              flex: 1;
+            }
+          }
+        }
+        .chips {
+          margin-top: 1rem;
+          display: flex;
+          flex-direction: row;
+          gap: .5rem;
+          .chip {
+            border-radius: .6rem;
+            padding: .4rem .6rem;
+            font-size: 0.9rem;
+            @media screen and (max-device-width: 1024px) {
+              font-size: 1.5rem;
+              padding: .5rem .9rem;
+            }
+            transition: all 200ms ease-in-out;
+            border: none !important;
+            &.orcid:hover {
+              background-color: $orcid_green;
+              color: white;
+            }
+            &.scholar:hover {
+              background-color: $scholar_blue;
+              color: white;
+            }
+            &.email:hover {
+              background-color: #C5008E;
+              color: white;
+            }
+            &.sf:hover {
+              background-color: #C0362C;
+              color: white;
+            }
+            &.pa:hover {
+              background-color: #FAC022;
+              color: white;
+            }
+          }
+        }
+        .smol {
+          font-size: 0.8rem;
+          color: #AAAAAA;
+          @media screen and (max-device-width: 1024px) {
+            font-size: 1.2rem;
+          }
+        }
+      }
+
+      &:hover {
+        &#alumnus { 
+          a {
+            border-bottom: 1px dashed rgba(#FF223C, .3);
+          }
+        }
+        &#publications { 
+          a {
+            border-bottom: 1px dashed rgba(#005BC5, .3);
+          }
+        }
+        &#projects { 
+          a {
+            border-bottom: 1px dashed rgba(#00B091, .3);
+          }
+        }
+        &#contact { 
+          a {
+            border-bottom: 1px dashed rgba(#C5008E, .3);
+          }
+        }
+        a {
+          border-bottom: 1px dashed rgba(0, 0, 0, .2);
+        }
+      }
+
+      &#previously, &#new {
+        opacity: 0.5;
+        &:hover {
+          background-color: rgba(#000000, 0.05);
+          opacity: 1.0;
+        }
+      }
+      &#alumnus:hover {
+        background-color: rgba(#FF223C, 0.05);
+        h3 {
+          color: #FF223C;
+          opacity: 0.75;
+        }
+      }
+      &#projects:hover {
+        background-color: rgba(#00B091, 0.05);
+        h3 {
+          color: #00B091;
+          opacity: 0.8;
+        }
+      }
+      &#publications {
+        .block-line:not(.chips) {
+          margin-bottom: 0.5rem;
+        }
+        &:hover {
+          background-color: rgba(#005BC5, 0.05);
+          h3 {
+            color: #005BC5;
+          }
+        }
+      }
+      &#contact:hover {
+        background-color: rgba(#C5008E, 0.05);
+        h3 {
+          color: #C5008E;
+        }
+      }
+      &#now {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .nya {
+      transition: all 200ms ease-in-out;
+      &:hover {
+        color: white;
+        border-radius: .3rem;
+        padding: .2rem .3rem;
+        margin-left: -.3rem;
+        a {
+          border-bottom: none;
+        }
+        &.scverse {
+          background-color: rgba(0, 0, 0, 1.0);
+        }
+        &.embl {
+          background-color: rgba(24, 151, 76, 1.0);
+        }
+        &.dkfz {
+          background-color: rgba($dkfz_blue, 1.0);
+        }
+        &.sanger {
+          background-color: rgba($sanger_blue, 1.0);
+        }
+        &.iitp {
+          background-color: rgba($chambray, 1.0);
+        }
+        &.gelfandlab, &.steglelab, &.mofa {
+          background-color: rgba($grey1_8, 1.0);
+        }
+        &.ysda {
+          background-color: rgba($yellow, 1.0);
+          color: black;
+        }
+        &.msu {
+          background-color: rgba($msu_blue, 1.0);
+        }
+        &.msu {
+          background-color: rgba($msu_blue, 1.0);
+        }
+        &.fbb {
+          background-color: rgba($turquoise, 1.0);
+        }
+        &.kundajelab, &.stanford {
+          background-color: rgba($cardinal_red, 1.0);
+        }
+        &.engreitzlab {
+          background-color: rgba(38, 136, 223, 1.0);
+        }
+        &.muon {
+          background-color: rgba(0, 175, 102, 1.0);
+        }
+        &.sf {
+          background-color: rgba(#C0362C, 1.0);
+        }
+        &.pa {
+          background-color: rgba(#FAC022, 1.0);
+        }
+        &.email {
+          background-color: rgba(#C5008E, 1.0);
         }
       }
     }

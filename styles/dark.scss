@@ -16,224 +16,38 @@ body {
   display: none;
 }
 
-#wrapper {
-  #lights {
-    border-color: white;
-    &:hover {
-      background-color: white;
+#header {
+  #userpic {
+    img {
+      -webkit-filter: invert(1);
+      filter: invert(1);
     }
   }
+}
 
-  #content {
-    #title {
-      #name {
-        color: $grey1;
-      }
-      #desc {
-        display: none;
-        color: $grey1;
-      }
-      #motivation {
-        color: $grey1;
-        padding: 0;
-        // margin-top: 30px;
-        margin: 0;
-        font-size: 12pt;
-        font-family: serif;
-      }
+.chips {
+  .chip {
+    background-color: rgba(255, 255, 255, .2);
+    color: rgba(255, 255, 255, .7);
+    &:hover {
+      background-color: black;
+      color: white;
     }
-    #occupation {
-    }
-    #announcement {
-      margin: 5px -10px;
-      .att_card {
-        position: relative;
-        width: 20rem;
-        max-width: 500px;
-        z-index: 1;
+  }
+}
 
-        border: 0.1rem solid $coral_pink_muted;
-        border-radius: 0.5em;
-        padding: 20px 10px;
-        margin: 10px 0 20px 0;
+#userinfo, #projects, #new {
+  .scverse:hover {
+    background-color: white !important;
+    color: black !important;
+  }
+}
 
-        color: $coral_pink_muted;
-        // background: linear-gradient(145deg, #ff8c81, #df766d);
-
-        transition: box-shadow $theme_transition,
-          background-color $theme_transition;
-
-        .att_text {
-          a {
-            text-decoration: none;
-            border-bottom: 1px solid $coral_pink_muted2;
-            color: inherit;
-            transition: border 500ms, color 500ms;
-            &:hover {
-              border-bottom: 1px solid $coral_pink;
-              color: $coral_pink;
-            }
-          }
-        }
-      }
-      @media screen and (max-device-width: 1024px) {
-        .att_card {
-          width: 100%;
-          max-width: 100%;
-          padding: 2rem 1rem;
-          margin: 0 2rem 2rem 0;
-          border-radius: 1rem;
-          font-size: 2rem;
-        }
-        &::-webkit-scrollbar {
-          width: 0px;
-          background: transparent;
-        }
-      }
-    }
-    #contributions {
-      margin: 40px 0 20px 0;
-      #contributions_header {
-        display: flex;
-        #contributions_profile {
-          .github:hover {
-            color: $github_violet;
-          }
-        }
-      }
-      #contributions_list {
-        .contrib_card {
-          background-color: transparent;
-          border: 1px solid $grey1_1;
-          &:hover {
-            background-color: $grey1_1;
-          }
-          .contrib_title {
-            span {
-              color: white;
-            }
-            a {
-              border-bottom: 1px solid $grey1_c;
-              color: $grey1_c;
-              transition: border $theme_transition, color $theme_transition;
-
-              img {
-                transition: all $theme_transition;
-                filter: invert(50%);
-              }
-            }
-            a:hover {
-              border-bottom: 1px solid white;
-              color: white;
-              img {
-                filter: invert(100%);
-              }
-            }
-          }
-
-          .contrib_info {
-            color: $grey1_8;
-            display: flex;
-          }
-        }
-      }
-    }
-    #publications {
-      margin-top: 20px;
-      #publications_header {
-        display: flex;
-      }
-      #publications_list {
-        margin: 10px -10px;
-        .pub_card {
-          border-radius: 0.5em;
-          padding: 15px 10px;
-          &:not(:first-child) {
-            margin-top: 10px;
-          }
-
-          &:hover,
-          &:active {
-            background-color: $grey1_3;
-          }
-
-          .clickable {
-          }
-          .pub_title {
-          }
-          .pub_links {
-          }
-          .pub_info {
-          }
-
-          transition: box-shadow $theme_transition,
-            background-color $theme_transition;
-        }
-        @media screen and (max-width: 1024px) {
-          .pub_card {
-            margin: 0 20px 20px 10px;
-          }
-          &::-webkit-scrollbar {
-            width: 0px;
-            background: transparent;
-          }
-        }
-      }
-    }
-    #footer {
-      display: flex;
-      flex-direction: row;
-      margin: 20px 0;
-      #communication {
-        color: $grey2;
-        a {
-          color: $grey2;
-        }
-        a:hover,
-        a:visited,
-        a:link,
-        a:active {
-          text-decoration: none;
-          color: inherit;
-        }
-        a:hover {
-          color: white;
-        }
-        .github {
-          display: none;
-        }
-      }
-      .middot {
-        margin: 0 5px;
-        color: $grey2;
-      }
-      #locations {
-        color: $grey2;
-        a:hover,
-        a:visited,
-        a:link,
-        a:active {
-          text-decoration: none;
-          color: inherit;
-        }
-        a {
-          color: $grey3;
-        }
-        .msk:hover {
-          color: $azure;
-        }
-        .cam:hover {
-          color: $cam_blue;
-        }
-        .hd:hover {
-          color: $hd_pink;
-        }
-        .hidden {
-          margin: 0;
-          padding: 0;
-          color: white;
-        }
-      }
+#publications {
+  .nya {
+    &:hover {
+      background-color: white !important;
+      color: black !important;
     }
   }
 }
