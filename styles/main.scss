@@ -174,9 +174,10 @@ body {
         &.table {
           .block-line {
             >span:first-child {
-              flex: 0 0 6rem;
+              flex: 0 0 11rem;
+              white-space: nowrap;
               @media screen and (max-device-width: 1024px) {
-                flex: 0 0 10rem;
+                flex: 0 0 16rem;
               }
             }
             >span:nth-child(2) {
@@ -256,6 +257,14 @@ body {
         }
       }
 
+      &#recently {
+        .block-content {
+          max-width: 36rem;
+        }
+        &:hover {
+          background-color: rgba(#000000, 0.03);
+        }
+      }
       &#previously, &#new {
         opacity: 0.5;
         &:hover {
@@ -350,6 +359,12 @@ body {
         &.muon {
           background-color: rgba(0, 175, 102, 1.0);
         }
+        &.alphagenome {
+          background-color: rgba($alphagenome_blue, 1.0);
+        }
+        &.pytorch {
+          background-color: rgba($pytorch_orange, 1.0);
+        }
         &.sf {
           background-color: rgba(#C0362C, 1.0);
         }
@@ -360,6 +375,25 @@ body {
           background-color: rgba(#C5008E, 1.0);
         }
       }
+    }
+  }
+
+  // Hidden text drawn as faint block glyphs. On hover (see the script in
+  // index.html) a ░▒▓█ band sweeps across and leaves the word behind.
+  // The word and the glyphs share one grid cell, so the width never changes.
+  .redacted {
+    display: inline-grid;
+    cursor: default;
+    > * {
+      grid-area: 1 / 1;
+    }
+    .word {
+      visibility: hidden;
+    }
+    .g {
+      font-family: Menlo, "SF Mono", "DejaVu Sans Mono", monospace;
+      letter-spacing: -0.05em;
+      opacity: .35;
     }
   }
 
