@@ -233,11 +233,12 @@ body a {
   }
 }
 #wrapper #content .block .block-content.table .block-line > span:first-child {
-  flex: 0 0 6rem;
+  flex: 0 0 11rem;
+  white-space: nowrap;
 }
 @media screen and (max-device-width: 1024px) {
   #wrapper #content .block .block-content.table .block-line > span:first-child {
-    flex: 0 0 10rem;
+    flex: 0 0 16rem;
   }
 }
 #wrapper #content .block .block-content.table .block-line > span:nth-child(2) {
@@ -305,6 +306,12 @@ body a {
 }
 #wrapper #content .block:hover a {
   border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+}
+#wrapper #content .block#recently .block-content {
+  max-width: 36rem;
+}
+#wrapper #content .block#recently:hover {
+  background-color: rgba(0, 0, 0, 0.03);
 }
 #wrapper #content .block#previously, #wrapper #content .block#new {
   opacity: 0.5;
@@ -398,6 +405,12 @@ body a {
 #wrapper #content .nya:hover.muon {
   background-color: rgb(0, 175, 102);
 }
+#wrapper #content .nya:hover.alphagenome {
+  background-color: #1a73e8;
+}
+#wrapper #content .nya:hover.pytorch {
+  background-color: #ee4c2c;
+}
 #wrapper #content .nya:hover.sf {
   background-color: #c0362c;
 }
@@ -406,6 +419,21 @@ body a {
 }
 #wrapper #content .nya:hover.email {
   background-color: #c5008e;
+}
+#wrapper .redacted {
+  display: inline-grid;
+  cursor: default;
+}
+#wrapper .redacted > * {
+  grid-area: 1/1;
+}
+#wrapper .redacted .word {
+  visibility: hidden;
+}
+#wrapper .redacted .g {
+  font-family: Menlo, "SF Mono", "DejaVu Sans Mono", monospace;
+  letter-spacing: -0.05em;
+  opacity: 0.35;
 }
 #wrapper .external {
   height: 12px;

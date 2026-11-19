@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
     <title>Danila Bredikhin</title>
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <link
@@ -127,10 +128,25 @@
           <h3></h3>
           <div class="block-content">
             <div class="block-line">
-              <span>Postdoctoral scolar at <span class="nya stanford"><a href="https://www.stanford.edu/" target="_blank">Stanford</a></span></span>
+              <span>Postdoctoral scholar at <span class="nya stanford"><a href="https://www.stanford.edu/" target="_blank">Stanford</a></span></span>
             </div>
             <div class="block-line">
               <span class="faint">w/ <span class="nya kundajelab"><a href="https://kundajelab.stanford.edu/" target="_blank">Anshul Kundaje</a></span> & <span class="nya engreitzlab"><a href="https://www.engreitzlab.org/" target="_blank">Jesse Engreitz</a></span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="block" id="recently">
+          <h3>Recently</h3>
+          <div class="block-content">
+            <div class="block-line">
+              <span>Leading the <span class="nya pytorch"><a href="https://github.com/genomicsxai/alphagenome-pytorch" target="_blank">PyTorch port</a></span> of DeepMind's <span class="nya alphagenome"><a href="https://deepmind.google/science/alphagenome/" target="_blank">AlphaGenome</a></span></span>
+            </div>
+            <div class="block-line">
+              <span>Organized <span class="nya scverse"><a href="https://scverse.org/conference2025/" target="_blank">scverse conference 2025</a></span></span>
+            </div>
+            <div class="block-line">
+              <span>Most recently, <span class="redacted" data-mask="░▒▓██▓▒░" role="img" aria-label="redacted"><span class="mask"><span class="g">░▒▓██▓▒░</span></span><span class="word">redacted</span></span></span>
             </div>
           </div>
         </div>
@@ -199,6 +215,12 @@
           <h3>Projects</h3>
           <div class="block-content table">
             <div class="block-line">
+              <span><span class="nya pytorch"><a href="https://github.com/genomicsxai/alphagenome-pytorch" target="_blank"
+                >alphagenome-pytorch</a
+              ></span></span>
+              <span>PyTorch port of AlphaGenome</span>
+            </div>
+            <div class="block-line">
               <span><span class="nya scverse"><a href="https://scverse.org/" target="_blank"
                 >scverse</a
               ></span></span>
@@ -220,7 +242,7 @@
         </div>
 
         <div class="block" id="new">
-          <h3>New repositories</h3>
+          <h3>Experimental projects</h3>
           <div class="block-content table">
             <div class="block-line">
               <span><span class="nya scverse"><a href="https://github.com/scverse/shadows" target="_blank"
@@ -308,5 +330,47 @@
       </div>
     </div>
     <div id="modaloverlay"></div>
+    <script>
+      // Redaction sweep: on hover a ░▒▓█ band passes left to right over the
+      // block glyphs and leaves the word behind; on leave the blocks return.
+      document.querySelectorAll(".redacted").forEach(function (el) {
+        var SH = "░▒▓█";
+        var mask = el.querySelector(".mask");
+        var word = el.querySelector(".word").textContent;
+        var base = el.dataset.mask;
+        var timer = null;
+
+        // consecutive blocks share one span so no seams show between them
+        function paint(chars) {
+          var html = "", run = "";
+          chars.forEach(function (c) {
+            if (SH.indexOf(c) >= 0) { run += c; return; }
+            if (run) { html += '<span class="g">' + run + "</span>"; run = ""; }
+            html += c;
+          });
+          mask.innerHTML = html + (run ? '<span class="g">' + run + "</span>" : "");
+        }
+
+        el.addEventListener("mouseenter", function () {
+          var t = 0;
+          clearInterval(timer);
+          timer = setInterval(function () {
+            t++;
+            var front = t - 2;
+            paint(word.split("").map(function (ch, i) {
+              var d = front - i;
+              if (d > 3) return ch;
+              if (d >= 0) return SH[3 - d];
+              return base[i];
+            }));
+            if (t >= word.length + 6) clearInterval(timer);
+          }, 45);
+        });
+        el.addEventListener("mouseleave", function () {
+          clearInterval(timer);
+          paint(base.split(""));
+        });
+      });
+    </script>
   </body>
 </html>
